@@ -1,0 +1,9 @@
+.header{
+    background-color: rgba($color: $background-color, $alpha: 0.75);
+    height: $navSections-height;
+
+    &__link{
+        text-decoration: none;
+        color: $link-color;
+    }
+}

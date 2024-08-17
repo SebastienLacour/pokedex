@@ -11,4 +11,4 @@ function Router() {
   )
 }
 
-export default Routes
+export default Router
