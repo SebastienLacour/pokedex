@@ -6,7 +6,7 @@ import Pokelist from './pages/Pokelist'
 function Router() {
   return (
     <Routes>
-        <Route path='/' element={<Pokelist/>} />
+        <Route path='/pokelist' element={<Pokelist/>} />
     </Routes>
   )
 }
