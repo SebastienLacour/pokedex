@@ -1,0 +1,21 @@
+.pokearticle{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 300px;
+    height: 300px;
+    border: 3px ridge rgba($color: $background-color, $alpha: 0.75);
+    background-color: rgba($color: $background-color, $alpha: 0.75);
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+    &__name{
+        text-decoration: none;
+        color: #dcea0d;
+    }
+
+    &__image{
+        width: 200px;
+        height: 200px;
+    }
+}

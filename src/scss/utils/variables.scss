@@ -4,6 +4,7 @@ $link-color: #81d825;
 
 // tailles
 $navSections-height: 80px;
+$border-width: 3px;
 
 // bordures
-$nav-border: 3px ridge $link-color;
+$nav-border: $border-width ridge $link-color;

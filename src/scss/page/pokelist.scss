@@ -3,4 +3,28 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    color: #dcea0d;
+
+    &__generation-choice{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 20px;
+
+        &__buttons{
+            display: flex;
+
+            &__button{
+                margin-left: 10px;
+                margin-right: 10px;
+                cursor: pointer;
+            }
+        }
+    }
+
+    &__pokemons{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
 }

@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 function PokeArticle(props) {
 
@@ -6,9 +7,10 @@ function PokeArticle(props) {
     const pokemon = props.pokemon
 
   return (
-    <div>
-        <strong>{pokemon.name.fr}</strong>
-    </div>
+    <Link className='pokearticle'>
+        <strong className='pokearticle__name'>{pokemon.name.fr}</strong>
+        <img src={pokemon.sprites.regular} alt={pokemon.name.fr} className='pokearticle__image'/>
+    </Link>
   )
 }
 
