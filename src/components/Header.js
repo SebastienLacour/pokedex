@@ -9,21 +9,31 @@ function Header() {
   const [toggleCompare, setToggleCompareLink] = useState(false)
 
   const toggleHandlerPokelist = () => {
-    setTogglePokelistLink(!togglePokelistLink)
+    setTogglePokelistLink(true)
     setToggleSearchLink(false)
+    setToggleCompareLink(false)
+  }
+
+  const toggleHandlerSearch = () => {
+    setTogglePokelistLink(false)
+    setToggleSearchLink(true)
     setToggleCompareLink(false)
   }
 
   return (
     <header className='header'>
-      <Link className={togglePokelistLink ? 'header__link' : 'header__link__activated'} to="/pokelist"  onClick={toggleHandlerPokelist}>
+
+      <Link className={togglePokelistLink ? 'header__link' : 'header__link__activated'} to="/pokelist" onClick={toggleHandlerPokelist}>
         <div>
           <strong>Liste</strong>
         </div>
       </Link>
-      <div className='header__div'>
-        <Link className='header__link'>Recherche</Link>
-      </div>
+
+      <Link className={toggleSearchLink ? 'header__link' : 'header__link__activated'} to="/search" onClick={toggleHandlerSearch}>
+        <div>
+          <strong>Recherche</strong>
+        </div>
+      </Link>
 
       <div className='header__div header__last__div'>
         <Link className='header__link'>Comparaison</Link>

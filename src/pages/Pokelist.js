@@ -1,5 +1,5 @@
 // Import des fonctions et des composants nécessaires
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState, useEffect } from 'react'
 import Header from '../components/Header'
 import PokeArticle from '../components/PokeArticle';
 
@@ -21,6 +21,7 @@ function Pokelist() {
     useEffect(() => {
         fetchPokemon()
     }, [])
+    
 
 
     // On supprime le premier index du tableau qui n'est pas utile
@@ -36,10 +37,6 @@ function Pokelist() {
     const seventhGenerationPokemon = finalPokemon.filter((pokemon) => pokemon.generation === 7)
     const eighthGenerationPokemon = finalPokemon.filter((pokemon) => pokemon.generation === 8)
     const ninethGenerationPokemon = finalPokemon.filter((pokemon) => pokemon.generation === 9)
-
-    const firstPokemonRef = useRef()
-    const secondPokemonRef = useRef()
-    const thirdPokemonRef = useRef()
 
     const [generation, setGeneration] = useState(1)
 
@@ -79,15 +76,6 @@ function Pokelist() {
         setGeneration(9)
     }
 
-    let displayedPokemon = []
-
-
-
-    console.log(displayedPokemon);
-
-
-
-
     return (
         <div>
             <Header />
@@ -114,7 +102,7 @@ function Pokelist() {
 
                     {generation === 1 ?
                         firstGenerationPokemon.map((item) => (
-                            <PokeArticle pokemon={item} />
+                            <PokeArticle pokemon={item} key={item.id}/>
                         ))
                         :
                         <div></div>
@@ -122,7 +110,7 @@ function Pokelist() {
 
                     {generation === 2 ?
                         secondGenerationPokemon.map((item) => (
-                            <PokeArticle pokemon={item} />
+                            <PokeArticle pokemon={item} key={item.id}/>
                         ))
                         :
                         <div></div>
@@ -130,49 +118,49 @@ function Pokelist() {
 
                     {generation === 3 ?
                         thirdGenerationPokemon.map((item) => (
-                            <PokeArticle pokemon={item} />
+                            <PokeArticle pokemon={item} key={item.id}/>
                         ))
                         :
                         <div></div>
                     }
                     {generation === 4 ?
                         fourthGenerationPokemon.map((item) => (
-                            <PokeArticle pokemon={item} />
+                            <PokeArticle pokemon={item} key={item.id}/>
                         ))
                         :
                         <div></div>
                     }
                     {generation === 5 ?
                         fifthGenerationPokemon.map((item) => (
-                            <PokeArticle pokemon={item} />
+                            <PokeArticle pokemon={item} key={item.id}/>
                         ))
                         :
                         <div></div>
                     }
                     {generation === 6 ?
                         sixthGenerationPokemon.map((item) => (
-                            <PokeArticle pokemon={item} />
+                            <PokeArticle pokemon={item} key={item.id}/>
                         ))
                         :
                         <div></div>
                     }
                     {generation === 7 ?
                         seventhGenerationPokemon.map((item) => (
-                            <PokeArticle pokemon={item} />
+                            <PokeArticle pokemon={item} key={item.id}/>
                         ))
                         :
                         <div></div>
                     }
                     {generation === 8 ?
                         eighthGenerationPokemon.map((item) => (
-                            <PokeArticle pokemon={item} />
+                            <PokeArticle pokemon={item} key={item.id}/>
                         ))
                         :
                         <div></div>
                     }
                     {generation === 9 ?
                         ninethGenerationPokemon.map((item) => (
-                            <PokeArticle pokemon={item} />
+                            <PokeArticle pokemon={item} key={item.id}/>
                         ))
                         :
                         <div></div>
@@ -180,8 +168,8 @@ function Pokelist() {
 
                 </div>
 
-
             </main>
+            
         </div>
     )
 }
