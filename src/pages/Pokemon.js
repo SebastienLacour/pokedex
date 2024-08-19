@@ -6,7 +6,6 @@ function Pokemon() {
 
     // UseParams pour récupérer l'id passé en paramètre de l'id
     const id = useParams().id
-    console.log(id);
 
     // useState pour récupérer le pokémon souhaité
     const [pokemon, setPokemon] = useState(undefined)
@@ -21,7 +20,7 @@ function Pokemon() {
 
     useEffect(() => {
         fetchPokemon()
-    }, [])
+    }, [id])
 
     console.log(pokemon);
 
@@ -34,7 +33,13 @@ function Pokemon() {
 
                     <div className='pokemon__container'>
 
-                        <h1>{pokemon.name.fr}</h1>
+                        <h1 className="pokemon__container__title">{pokemon.name.fr}</h1>
+
+                        <div className="pokemon__container__information">
+                            <strong>{pokemon.category}</strong>
+                            <strong>taille : {pokemon.height}</strong>
+                            <strong>poids : {pokemon.weight}</strong>
+                        </div>
 
                         <div className='pokemon__container__img'>
                             <img src={pokemon.sprites.regular} alt={pokemon.name.fr} />
@@ -63,60 +68,6 @@ function Pokemon() {
 
                             <h2 className="pokemon__container__tables__title">faiblesses</h2>
                             <table className="pokemon__container__tables__weaknesses">
-                                {/* <tr>
-                                    <th className='pokemon__container__tables__stats__cell'>{pokemon.resistances[0].name}</th>
-                                    <td className='pokemon__container__tables__stats__cell'>{pokemon.resistances[0].multiplier}</td>
-                                    <th className='pokemon__container__tables__stats__cell'>{pokemon.resistances[9].name}</th>
-                                    <td className='pokemon__container__tables__stats__cell'>{pokemon.resistances[9].multiplier}</td>
-                                </tr>
-                                <tr>
-                                    <th className='pokemon__container__tables__stats__cell'>{pokemon.resistances[1].name}</th>
-                                    <td className='pokemon__container__tables__stats__cell'>{pokemon.resistances[1].multiplier}</td>
-                                    <th className='pokemon__container__tables__stats__cell'>{pokemon.resistances[10].name}e</th>
-                                    <td className='pokemon__container__tables__stats__cell'>{pokemon.resistances[10].multiplier}</td>
-                                </tr>
-                                <tr>
-                                    <th className='pokemon__container__tables__stats__cell'>{pokemon.resistances[2].name}</th>
-                                    <td className='pokemon__container__tables__stats__cell'>{pokemon.resistances[2].multiplier}</td>
-                                    <th className='pokemon__container__tables__stats__cell'>{pokemon.resistances[11].name}</th>
-                                    <td className='pokemon__container__tables__stats__cell'>{pokemon.resistances[11].multiplier}</td>
-                                </tr>
-                                <tr>
-                                    <th className='pokemon__container__tables__stats__cell'>{pokemon.resistances[3].name}</th>
-                                    <td className='pokemon__container__tables__stats__cell'>{pokemon.resistances[3].multiplier}</td>
-                                    <th className='pokemon__container__tables__stats__cell'>{pokemon.resistances[12].name}</th>
-                                    <td className='pokemon__container__tables__stats__cell'>{pokemon.resistances[12].multiplier}</td>
-                                </tr>
-                                <tr>
-                                    <th className='pokemon__container__tables__stats__cell'>{pokemon.resistances[4].name}</th>
-                                    <td className='pokemon__container__tables__stats__cell'>{pokemon.resistances[4].multiplier}</td>
-                                    <th className='pokemon__container__tables__stats__cell'>{pokemon.resistances[13].name}</th>
-                                    <td className='pokemon__container__tables__stats__cell'>{pokemon.resistances[13].multiplier}</td>
-                                </tr>
-                                <tr>
-                                    <th className='pokemon__container__tables__stats__cell'>{pokemon.resistances[5].name}</th>
-                                    <td className='pokemon__container__tables__stats__cell'>{pokemon.resistances[5].multiplier}</td>
-                                    <th className='pokemon__container__tables__stats__cell'>{pokemon.resistances[14].name}</th>
-                                    <td className='pokemon__container__tables__stats__cell'>{pokemon.resistances[14].multiplier}</td>
-                                </tr>
-                                <tr>
-                                    <th className='pokemon__container__tables__stats__cell'>{pokemon.resistances[6].name}</th>
-                                    <td className='pokemon__container__tables__stats__cell'>{pokemon.resistances[6].multiplier}</td>
-                                    <th className='pokemon__container__tables__stats__cell'>{pokemon.resistances[15].name}</th>
-                                    <td className='pokemon__container__tables__stats__cell'>{pokemon.resistances[15].multiplier}</td>
-                                </tr>
-                                <tr>
-                                    <th className='pokemon__container__tables__stats__cell'>{pokemon.resistances[7].name}</th>
-                                    <td className='pokemon__container__tables__stats__cell'>{pokemon.resistances[7].multiplier}</td>
-                                    <th className='pokemon__container__tables__stats__cell'>{pokemon.resistances[16].name}</th>
-                                    <td className='pokemon__container__tables__stats__cell'>{pokemon.resistances[16].multiplier}</td>
-                                </tr>
-                                <tr>
-                                    <th className='pokemon__container__tables__stats__cell'>{pokemon.resistances[8].name}</th>
-                                    <td className='pokemon__container__tables__stats__cell'>{pokemon.resistances[8].multiplier}</td>
-                                    <th className='pokemon__container__tables__stats__cell'>{pokemon.resistances[17].name}</th>
-                                    <td className='pokemon__container__tables__stats__cell'>{pokemon.resistances[17].multiplier}</td>
-                                </tr> */}
 
                                 <td className="pokemon__container__tables__weaknesses__column">
                                     <tr>
