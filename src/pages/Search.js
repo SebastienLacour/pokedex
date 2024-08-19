@@ -29,10 +29,7 @@ function Search() {
         setValue(e.target.value)
     }
 
-    console.log(value);
-
     const searchData = pokemon.filter((item) => item.name.fr.toLowerCase().includes(value.toLowerCase()))
-    console.log(searchData);
 
     return (
         <div>
