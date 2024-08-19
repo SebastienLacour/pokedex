@@ -1,0 +1,44 @@
+.pokemon{
+    color: $page-color;
+
+    &__container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+
+        &__tables{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+
+            &__stats{
+                border: ($border-width)*2 ridge $page-color;
+                border-collapse: collapse;
+    
+                &__cell{
+                    border: $border-width ridge $page-color;
+                    border-collapse: collapse;
+                    padding: $table-padding;
+                }
+            }
+
+            &__weaknesses{
+                border-collapse: collapse;
+
+                &__column{
+                    border: ($border-width)*2 ridge $page-color;
+                    border-collapse: collapse;    
+                }
+
+                &__cell{
+                    border: $border-width ridge $page-color;
+                    border-collapse: collapse;
+                    padding: $table-padding;
+                }
+            }
+        }
+
+    }
+}

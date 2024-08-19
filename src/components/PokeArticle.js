@@ -7,7 +7,7 @@ function PokeArticle(props) {
     const pokemon = props.pokemon
 
   return (
-    <Link className='pokearticle'>
+    <Link to={'/' + pokemon.pokedex_id} className='pokearticle'>
         <strong className='pokearticle__name'>{pokemon.name.fr}</strong>
         <img src={pokemon.sprites.regular} alt={pokemon.name.fr} className='pokearticle__image'/>
     </Link>
