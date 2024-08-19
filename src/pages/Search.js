@@ -42,12 +42,14 @@ function Search() {
 
                 <input type="search" name="recherche" className='search__input' onChange={searchHandler}/>
 
-                {value !== "" ? 
-                searchData.map((item) => (
-                    <PokeArticle pokemon={item}/>
-                ))
+                {value !== "" ?
+                <div className='search__list'>
+                    {searchData.map((item) => (
+                        <PokeArticle pokemon={item}/>
+                    ))}
+                </div> 
                 :
-                <div></div>
+                <div className='search__list-empty'></div>
                 }
             </main>
 
