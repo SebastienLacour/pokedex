@@ -14,12 +14,39 @@
         &__information{
             display: flex;
             flex-direction: column;
-            border: $border-width ridge $page-color;
-            padding: 20px;
+            border-top: $border-width ridge $page-color;
+            border-right: $border-width ridge $page-color;
+            border-bottom: $border-width ridge $page-color;
+            padding: 10px;
             position: absolute;
             top: 20%;
             left: 0;
             font-size: 20px;
+            margin-top: 70px;
+            width: 15%;
+            background-color: rgba($color: $background-color, $alpha: 0.85);
+
+            &__container-img{
+                display: flex;
+                margin-top: 5px;
+
+                &__title{
+
+                }
+
+                &__img{
+                    margin-left: 5px;
+                    width: 30px;
+                    height: 30px;
+
+                }
+    
+            }
+
+        }
+
+        &__img{
+            margin-top: 50px;
         }
 
         &__tables{

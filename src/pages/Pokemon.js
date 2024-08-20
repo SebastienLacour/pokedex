@@ -39,6 +39,16 @@ function Pokemon() {
                             <strong>{pokemon.category}</strong>
                             <strong>taille : {pokemon.height}</strong>
                             <strong>poids : {pokemon.weight}</strong>
+                            <div className='pokemon__container__information__container-img'>
+                                <strong className='pokemon__container__information__container-img__title'>types: </strong>
+                                    <div>
+                                        {pokemon.types.map((type) => (
+                                            <img src={type.image} alt={type.name} className='pokemon__container__information__container-img__img' />
+                                        ))}
+                                    </div>
+
+                            </div>
+
                         </div>
 
                         <div className='pokemon__container__img'>
