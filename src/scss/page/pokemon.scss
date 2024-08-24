@@ -11,6 +11,38 @@
             font-size: 40px;
         }
 
+        &__evolution{
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+
+            &__group{
+                display: flex;
+                flex-direction: column;
+            }
+
+            &__name{
+                color: $page-color;
+                text-decoration: none;
+                background-color: rgba($color: $background-color, $alpha: 0.85);
+                padding: $table-padding;
+                margin-top: 10px;
+
+                &--left{
+                    border-top: 1px ridge $page-color;
+                    border-right: 1px ridge $page-color;
+                    border-bottom: 1px ridge $page-color;
+                }
+
+                &--right{
+                    border-top: 1px ridge $page-color;                
+                    border-left: 1px ridge $page-color;                
+                    border-bottom: 1px ridge $page-color;                
+                }
+
+            }
+        }
+
         &__information{
             display: flex;
             flex-direction: column;
@@ -22,17 +54,13 @@
             top: 20%;
             left: 0;
             font-size: 20px;
-            margin-top: 70px;
+            margin-top: 180px;
             width: 15%;
             background-color: rgba($color: $background-color, $alpha: 0.85);
 
             &__container-img{
                 display: flex;
                 margin-top: 5px;
-
-                &__title{
-
-                }
 
                 &__img{
                     margin-left: 5px;
