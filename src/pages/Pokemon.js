@@ -1,15 +1,13 @@
 import React, { useState, useEffect } from 'react'
 import Header from '../components/Header'
 import { Link, useParams } from 'react-router-dom'
+import Background from '../components/Background';
 
 function Pokemon() {
 
 
     // UseParams pour récupérer l'id passé en paramètre de l'id
     const id = useParams().id
-
-    console.log(id);
-
 
     // UseState pour récupérer tous les pokémons
     const [pokemon, setPokemon] = useState([])
@@ -28,20 +26,106 @@ function Pokemon() {
         fetchPokemon()
     }, [])
 
-    console.log(pokemon);
+    let onePokemon = pokemon.find((item) => item.name.fr === id)
 
-    let onePokemon = {}
+
+    let background = ""    
+
+    console.log(onePokemon);
+    
+    
 
     if (onePokemon !== undefined) {
-        onePokemon = pokemon.find((item) => item.name.fr === id)
 
-        console.log(onePokemon);
+
+        switch (onePokemon.types[0].name) {
+
+            case "Feu":
+                background = "background__fire"
+                break;
+
+            case "Plante":
+                background= "background__plant"
+                break;
+
+            case "Eau":
+                background= "background__water"
+                break;
+
+            case "Électrik":
+                background= "background__electrik"
+                break;
+
+            case "Sol":
+                background= "background__ground"
+                break;
+
+            case "Roche":
+                background= "background__rock"
+                break;
+
+            case "Acier":
+                background= "background__steel"
+                break;
+
+            case "Vol":
+                background= "background__fly"
+                break;
+
+            case "Combat":
+                background= "background__fight"
+                break;
+
+            case "Poison":
+                background= "background__poison"
+                break;
+
+            case "Insecte":
+                background= "background__bug"
+                break;
+
+            case "Glace":
+                background= "background__ice"
+                break;
+
+            case "Psy":
+                background= "background__psy"
+                break;
+
+            case "Ténèbre":
+                background= "background__dark"
+                break;
+
+            case "Spectre":
+                background= "background__spirit"
+                break;
+
+            case "Normal":
+                background= "background__normal"
+                break;
+
+            case "Dragon":
+                background= "background__dragon"
+                break;
+
+            case "Fée":
+                background= "background__fairy"
+                break;
+                
+            default:
+                background = "background"
+        }
+
+        console.log(background);
+
+        
     }    
     
 
     return (
         <div>
             <Header />
+            <Background backgroundType = {background}/>
             <main className='pokemon'>
                 {onePokemon !== undefined ?
 
