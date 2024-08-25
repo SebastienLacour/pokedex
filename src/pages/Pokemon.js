@@ -27,9 +27,11 @@ function Pokemon() {
         fetchPokemon()
     }, [])
 
+    // Récupération du pokémon en fonction du nom passé en paramètre de l'URL
     let onePokemon = pokemon.find((item) => item.name.fr === id)
 
 
+    // Initialisation de la variable background qui va gérer le fond en fonction du premier type du pokémon
     let background = ""
 
     console.log(onePokemon);
@@ -38,7 +40,7 @@ function Pokemon() {
 
     if (onePokemon !== undefined) {
 
-
+        // Modificaiton de la variable background en fonction du type du pokémon
         switch (onePokemon.types[0].name) {
 
             case "Feu":
@@ -116,6 +118,23 @@ function Pokemon() {
             default:
                 background = "background"
         }
+
+    }
+
+    const [image, setImage] = useState("regular")
+
+    function imageHandler(){
+
+            if (image === "regular") {
+                return(
+                    setImage("shiny")
+                )
+            } else {
+                return(
+                    setImage("regular")
+                )
+            }
+
 
     }
 
@@ -241,7 +260,8 @@ function Pokemon() {
                         </div>
 
                         <div className='pokemon__container__img'>
-                            <img src={onePokemon.sprites.regular} alt={onePokemon.name.fr} />
+                            <img src={image === "regular" ? onePokemon.sprites.regular : onePokemon.sprites.shiny} alt={onePokemon.name.fr} />
+                            <button className='pokemon__container__img__button' onClick={imageHandler}>{image === "regular" ? "Shiny" : "Regular"}</button>
                         </div>
 
                         <div className='pokemon__container__tables'>

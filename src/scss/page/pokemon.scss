@@ -74,7 +74,18 @@
         }
 
         &__img{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             margin-top: 50px;
+
+            &__button{
+                width: 20%;
+                font-size: 20px;
+                cursor: pointer;
+                padding: 2%;
+                text-align: center;
+            }
         }
 
         &__tables{
@@ -128,7 +139,7 @@
                     border: $border-width ridge $page-color;
                     border-radius: 10px;
                     padding: $table-padding;
-                    background-color: rgba($color: #3ab412, $alpha: 0.7);
+                    background-color: rgba($color: $background-color, $alpha: 0.7);
                 }
             }
         }
