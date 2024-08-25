@@ -36,8 +36,7 @@ function Pokemon() {
 
     console.log(onePokemon);
 
-
-
+    // Si un pokémon a été trouvé
     if (onePokemon !== undefined) {
 
         // Modificaiton de la variable background en fonction du type du pokémon
@@ -121,8 +120,10 @@ function Pokemon() {
 
     }
 
+    // UseState qui va gérer si l'image est "regular" ou "shiny"
     const [image, setImage] = useState("regular")
 
+    // Au clic sur le bouton, changer l'image
     function imageHandler(){
 
             if (image === "regular") {
@@ -256,6 +257,7 @@ function Pokemon() {
                                 </div>
 
                             </div>
+                            <strong>sexes :<br /> mâle {onePokemon.sexe.male}% / femelle {onePokemon.sexe.female}%</strong>
 
                         </div>
 
