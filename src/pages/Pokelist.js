@@ -88,7 +88,7 @@ function Pokelist() {
 
     return (
         <div>
-            <Header />
+            <Header list={true} search={false} compare={false}/>
             <main className="pokelist">
 
                 {/* Titre de la page */}

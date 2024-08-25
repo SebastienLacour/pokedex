@@ -142,7 +142,7 @@ function Pokemon() {
 
     return (
         <div>
-            <Header />
+            <Header list={false} search={false} compare={false}/>
             <Background backgroundType={background} />
             <main className='pokemon'>
                 {onePokemon !== undefined ?

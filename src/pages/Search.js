@@ -33,7 +33,7 @@ function Search() {
 
     return (
         <div>
-            <Header />
+            <Header list={false} search={true} compare={false}/>
             <main className='search'>
                 <h1>Cherchez un pokémon !!!</h1>
 
