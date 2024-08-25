@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import Header from '../components/Header'
 import { Link, useParams } from 'react-router-dom'
 import Background from '../components/Background';
+import Footer from '../components/Footer';
 
 function Pokemon() {
 
@@ -29,11 +30,11 @@ function Pokemon() {
     let onePokemon = pokemon.find((item) => item.name.fr === id)
 
 
-    let background = ""    
+    let background = ""
 
     console.log(onePokemon);
-    
-    
+
+
 
     if (onePokemon !== undefined) {
 
@@ -45,87 +46,84 @@ function Pokemon() {
                 break;
 
             case "Plante":
-                background= "background__plant"
+                background = "background__plant"
                 break;
 
             case "Eau":
-                background= "background__water"
+                background = "background__water"
                 break;
 
             case "Électrik":
-                background= "background__electrik"
+                background = "background__electrik"
                 break;
 
             case "Sol":
-                background= "background__ground"
+                background = "background__ground"
                 break;
 
             case "Roche":
-                background= "background__rock"
+                background = "background__rock"
                 break;
 
             case "Acier":
-                background= "background__steel"
+                background = "background__steel"
                 break;
 
             case "Vol":
-                background= "background__fly"
+                background = "background__fly"
                 break;
 
             case "Combat":
-                background= "background__fight"
+                background = "background__fight"
                 break;
 
             case "Poison":
-                background= "background__poison"
+                background = "background__poison"
                 break;
 
             case "Insecte":
-                background= "background__bug"
+                background = "background__bug"
                 break;
 
             case "Glace":
-                background= "background__ice"
+                background = "background__ice"
                 break;
 
             case "Psy":
-                background= "background__psy"
+                background = "background__psy"
                 break;
 
             case "Ténèbre":
-                background= "background__dark"
+                background = "background__dark"
                 break;
 
             case "Spectre":
-                background= "background__spirit"
+                background = "background__spirit"
                 break;
 
             case "Normal":
-                background= "background__normal"
+                background = "background__normal"
                 break;
 
             case "Dragon":
-                background= "background__dragon"
+                background = "background__dragon"
                 break;
 
             case "Fée":
-                background= "background__fairy"
+                background = "background__fairy"
                 break;
-                
+
             default:
                 background = "background"
         }
 
-        console.log(background);
+    }
 
-        
-    }    
-    
 
     return (
         <div>
             <Header />
-            <Background backgroundType = {background}/>
+            <Background backgroundType={background} />
             <main className='pokemon'>
                 {onePokemon !== undefined ?
 
@@ -164,7 +162,7 @@ function Pokemon() {
                                         onePokemon.evolution.next ?
                                             <div>
                                                 {
-                                                    onePokemon.evolution.next.length >= 3 && id !== "Mystherbe" && id !== "Ptitard" && id !== "Tarsal"?
+                                                    onePokemon.evolution.next.length >= 3 && id !== "Mystherbe" && id !== "Ptitard" && id !== "Tarsal" ?
                                                         <div className='pokemon__container__evolution__group'>
                                                             {
                                                                 onePokemon.evolution.next.map((evolution) => (
@@ -202,16 +200,20 @@ function Pokemon() {
 
                                             </div>
                                     }
-                                    {/* 
 
-                                    {
-                                        onePokemon.evolution.next ?
-                                            <Link to={'/' + onePokemon.evolution.next[0].name} className='pokemon__container__evolution__name pokemon__container__evolution__name--right'>
-                                                {onePokemon.evolution.next[0].name}
-                                            </Link>
+                                    {/* {
+                                        onePokemon.evolution.mega ?
+                                            <div className='pokemon__container__evolution__group'>
+                                                {
+                                                    onePokemon.evolution.mega.map((item) => (
+                                                        <Link  className='pokemon__container__evolution__name pokemon__container__evolution__name--right'>
+                                                            {item.orbe}
+                                                        </Link>
+                                                    ))
+                                                }
+                                            </div>
                                             :
                                             <div>
-
                                             </div>
                                     } */}
 
@@ -243,7 +245,7 @@ function Pokemon() {
                         </div>
 
                         <div className='pokemon__container__tables'>
-                            <h2 className='pokemon__container__tables__title'>statistiques</h2>
+                            <h2 className='pokemon__container__tables__title'>Statistiques</h2>
                             <table className='pokemon__container__tables__stats'>
                                 <tr>
                                     <th className='pokemon__container__tables__stats__cell'>points de vie</th>
@@ -263,7 +265,7 @@ function Pokemon() {
                                 </tr>
                             </table>
 
-                            <h2 className="pokemon__container__tables__title">faiblesses</h2>
+                            <h2 className="pokemon__container__tables__title">Faiblesses</h2>
                             <table className="pokemon__container__tables__weaknesses">
 
                                 <td className="pokemon__container__tables__weaknesses__column">
@@ -349,6 +351,18 @@ function Pokemon() {
                             </table>
                         </div>
 
+                        <div className='pokemon__container__talents'>
+                            <h2>Talents</h2>
+                            <div className='pokemon__container__talents__container'>
+                                {onePokemon.talents.map(item => (
+                                    <div className='pokemon__container__talents__container__item'>
+                                        <strong>{item.name}</strong>
+                                    </div>
+                                ))
+                                }
+                            </div>
+                        </div>  
+
 
                     </div>
 
@@ -358,6 +372,7 @@ function Pokemon() {
 
                 }
             </main>
+            <Footer />
         </div>
     )
 }
