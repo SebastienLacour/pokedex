@@ -4,7 +4,7 @@
     align-items: center;
     color: $page-color;
 
-    &__pokemons{
+    &__pokemon{
         display: flex;
         justify-content: space-around;
         width: 100%;
@@ -17,6 +17,48 @@
             &__image{
                 max-width: 60%;
                 height: auto;
+            }
+
+            &__types{
+                display: flex;
+                justify-content: space-around;
+                width: 40%;
+                margin-top: 10px;
+            }
+
+            &__vulnerabilities{
+                display: flex;
+                flex-direction: column;
+
+                &__item{
+                    display: flex;
+                    flex-direction: column;
+
+                    &__flex{
+                        display: flex;
+                    }
+                }
+            }
+
+            &__stats{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                
+                &__item{
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-around;
+                    width: 200px;
+
+                    &--reversed{
+                        display: flex;
+                        flex-direction: row-reverse;
+                        align-items: center;
+                        justify-content: space-around;
+                        width: 200px;
+                    }
+                }
             }
     
         }
