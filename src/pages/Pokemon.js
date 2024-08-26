@@ -383,8 +383,7 @@ function Pokemon() {
                                 ))
                                 }
                             </div>
-                        </div>  
-
+                        </div>
 
                     </div>
 
