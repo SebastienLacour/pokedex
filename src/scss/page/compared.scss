@@ -7,12 +7,19 @@
     &__pokemon{
         display: flex;
         justify-content: space-around;
-        width: 100%;
 
         &__item{
             display: flex;
             flex-direction: column;
             align-items: center;
+
+            &--left{
+                border-right: solid 1px white;
+            }
+
+            &--right{
+                border-left: solid 1px white;
+            }
 
             &__image{
                 max-width: 60%;
@@ -24,18 +31,41 @@
                 justify-content: space-around;
                 width: 40%;
                 margin-top: 10px;
+
+                &__img{
+                    max-width: 60px;
+                    height: auto;
+                }
             }
 
             &__vulnerabilities{
                 display: flex;
                 flex-direction: column;
+                align-items: center;
+
 
                 &__item{
                     display: flex;
                     flex-direction: column;
+                    justify-content: space-between;
+                    align-items: center;
+                    height: 100px;
+                    width: 450px;
+                    border-top: solid 1px white;
+                    border-bottom: solid 1px white;
+                    padding-bottom: 20px;
+                    padding-top: 2px;
 
                     &__flex{
                         display: flex;
+                        justify-content: space-around;
+                        width: 50%;
+
+                        &__img{
+                            max-width: 50px;
+                            height: auto;
+                        }
+                        
                     }
                 }
             }
@@ -48,14 +78,14 @@
                 &__item{
                     display: flex;
                     align-items: center;
-                    justify-content: space-around;
+                    justify-content: space-between;
                     width: 200px;
 
                     &--reversed{
                         display: flex;
                         flex-direction: row-reverse;
                         align-items: center;
-                        justify-content: space-around;
+                        justify-content: space-between;
                         width: 200px;
                     }
                 }
