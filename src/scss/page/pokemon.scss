@@ -19,6 +19,11 @@
             &__group{
                 display: flex;
                 flex-direction: column;
+
+                &__subgroup{
+                    display: flex;
+                    flex-direction: column;
+                }
             }
 
             &__name{
@@ -86,6 +91,27 @@
                 padding: 2%;
                 text-align: center;
                 background-color: goldenrod;
+            }
+        }
+
+        &__mega-evolution{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            &__flex{
+                display: flex;
+            }
+
+            &__item{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                &--img{
+                    max-width: 80%;
+                    height: auto;
+                }
             }
         }
 

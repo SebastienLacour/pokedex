@@ -6,6 +6,7 @@ import Search from './pages/Search'
 import Pokemon from './pages/Pokemon'
 import Compare from './pages/Compare'
 import Compared from './pages/Compared'
+import MegaEvolution from './pages/MegaEvolution'
 
 function Router() {
   return (
@@ -15,6 +16,7 @@ function Router() {
         <Route path='/compare' element={<Compare/>}/>
         <Route path='/compared' element={<Compared/>}/>
         <Route path='/:id' element={<Pokemon/>} />
+        <Route path='/pokemon/:name' element={<MegaEvolution/>} />
     </Routes>
   )
 }
