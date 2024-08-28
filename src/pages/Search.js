@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import Header from '../components/Header'
 import PokeArticle from '../components/PokeArticle'
+import Footer from '../components/Footer'
 
 function Search() {
 
@@ -23,21 +24,32 @@ function Search() {
 
     // USeState permettant de stocker la valeur placé dans l'input
     const [value, setValue] = useState("")
+    const [type, setType] = useState("")
+
+    const inputSearchRef = useRef()
+    const inputTypeRef = useRef()
 
     function searchHandler(e){
         
         setValue(e.target.value)
     }
 
+    function searchTypeHandler(e){
+
+        setType(e.target.value)
+    }
+
     const searchData = pokemon.filter((item) => item.name.fr.toLowerCase().includes(value.toLowerCase()))
+    
+    
 
     return (
         <div>
             <Header list={false} search={true} compare={false}/>
             <main className='search'>
-                <h1>Cherchez un pokémon !!!</h1>
+                <h2>Cherchez un pokémon !!!</h2>
 
-                <input type="search" name="recherche" className='search__input' onChange={searchHandler}/>
+                <input type="search" name="recherche" className='search__input' onChange={searchHandler} ref={inputSearchRef}/>
 
                 {value !== "" ?
                 <div className='search__list'>
@@ -48,7 +60,17 @@ function Search() {
                 :
                 <div className='search__list-empty'></div>
                 }
+
+                <h2>Cherchez un type</h2>
+
+                {searchData === String ? 
+                    <div></div>
+                    :
+                    <input type="search" name='recherche de type' className='search__input' ref={inputTypeRef} onChange={searchTypeHandler}/>
+            }
             </main>
+
+            <Footer/>
 
         </div>
     )

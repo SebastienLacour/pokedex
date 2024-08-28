@@ -1,9 +1,10 @@
 .search{
     width: 100%;
-    height: 100%;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
+    flex-grow: 1;
     color: $page-color;
 
     &__input{
@@ -15,10 +16,5 @@
     &__list{
         display: flex;
         flex-wrap: wrap;
-
-        &-empty{
-            height: 100vh;
-            
-        }
     }
 }

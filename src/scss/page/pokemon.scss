@@ -120,6 +120,56 @@
                     border-collapse: collapse;
                     padding: $table-padding;
                     background-color: rgba($color: $background-color, $alpha: 0.7);
+
+                    &--orange{
+                        border: $border-width ridge $page-color;
+                        border-collapse: collapse;
+                        padding: $table-padding;    
+                        background-color: orange;
+                        color: black;
+                    }
+
+                    &--red{
+                        border: $border-width ridge $page-color;
+                        border-collapse: collapse;
+                        padding: $table-padding;    
+                        background-color: red;
+                        color: black;
+                    }
+
+                    &--green{
+                        border: $border-width ridge $page-color;
+                        border-collapse: collapse;
+                        padding: $table-padding;    
+                        background-color: green;
+                        color: black;
+                    }
+
+                    &--blue{
+                        border: $border-width ridge $page-color;
+                        border-collapse: collapse;
+                        padding: $table-padding;    
+                        background-color: blue;
+                        color: black;
+                    }
+
+
+                    &--yellow{
+                        border: $border-width ridge $page-color;
+                        border-collapse: collapse;
+                        padding: $table-padding;    
+                        background-color: yellow;
+                        color: black;
+                    }
+
+                    &--white{
+                        border: $border-width ridge $page-color;
+                        border-collapse: collapse;
+                        padding: $table-padding;    
+                        background-color: white;
+                        color: black;
+                    }
+
                 }
             }
         }

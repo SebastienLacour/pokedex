@@ -124,25 +124,26 @@ function Pokemon() {
     const [image, setImage] = useState("regular")
 
     // Au clic sur le bouton, changer l'image
-    function imageHandler(){
+    function imageHandler() {
 
-            if (image === "regular") {
-                return(
-                    setImage("shiny")
-                )
-            } else {
-                return(
-                    setImage("regular")
-                )
-            }
+        if (image === "regular") {
+            return (
+                setImage("shiny")
+            )
+        } else {
+            return (
+                setImage("regular")
+            )
+        }
 
 
     }
 
 
+
     return (
         <div>
-            <Header list={false} search={false} compare={false}/>
+            <Header list={false} search={false} compare={false} />
             <Background backgroundType={background} />
             <main className='pokemon'>
                 {onePokemon !== undefined ?
@@ -221,22 +222,6 @@ function Pokemon() {
                                             </div>
                                     }
 
-                                    {/* {
-                                        onePokemon.evolution.mega ?
-                                            <div className='pokemon__container__evolution__group'>
-                                                {
-                                                    onePokemon.evolution.mega.map((item) => (
-                                                        <Link  className='pokemon__container__evolution__name pokemon__container__evolution__name--right'>
-                                                            {item.orbe}
-                                                        </Link>
-                                                    ))
-                                                }
-                                            </div>
-                                            :
-                                            <div>
-                                            </div>
-                                    } */}
-
                                 </div>
 
                                 :
@@ -257,7 +242,12 @@ function Pokemon() {
                                 </div>
 
                             </div>
-                            <strong>sexes :<br /> mâle {onePokemon.sexe.male}% / femelle {onePokemon.sexe.female}%</strong>
+                            {onePokemon.sexe ?
+                                <strong>sexes :<br /> mâle {onePokemon.sexe.male}% / femelle {onePokemon.sexe.female}%</strong>
+                                :
+                                <div></div>
+
+                            }
 
                         </div>
 
@@ -291,84 +281,60 @@ function Pokemon() {
                             <table className="pokemon__container__tables__weaknesses">
 
                                 <td className="pokemon__container__tables__weaknesses__column">
-                                    <tr>
-                                        <th className="pokemon__container__tables__weaknesses__cell">{onePokemon.resistances[0].name}</th>
-                                        <td className="pokemon__container__tables__weaknesses__cell">{onePokemon.resistances[0].multiplier}</td>
+                                    {onePokemon.resistances.slice(0, 9).map((resistance) => (
+                                        <tr>
+                                            <th className="pokemon__container__tables__weaknesses__cell">{resistance.name}</th>
+                                            {resistance.multiplier === 4 ? 
+                                            <td className='pokemon__container__tables__weaknesses__cell--red'>{resistance.multiplier}</td>
+                                                :
+                                                resistance.multiplier === 2 ? 
+                                                    <td className='pokemon__container__tables__weaknesses__cell--orange'>{resistance.multiplier}</td>
+                                                        :
+                                                        resistance.multiplier === 1 ?
+                                                            <td className='pokemon__container__tables__weaknesses__cell--yellow'>{resistance.multiplier}</td>
+                                                                :
+                                                                resistance.multiplier === 0.5 ?
+                                                                <td className='pokemon__container__tables__weaknesses__cell--green'>{resistance.multiplier}</td>
+                                                                    :
+                                                                    resistance.multiplier === 0.25 ?
+                                                                    <td className='pokemon__container__tables__weaknesses__cell--blue'>{resistance.multiplier}</td>
+                                                                        :
+                                                                        resistance.multiplier === 0 ?
+                                                                        <td className='pokemon__container__tables__weaknesses__cell--white'>{resistance.multiplier}</td>
+                                            :
+                                            <td className='pokemon__container__tables__weaknesses__cell'>{resistance.multiplier}</td>
+                                    }
                                     </tr>
-                                    <tr>
-                                        <th className="pokemon__container__tables__weaknesses__cell">{onePokemon.resistances[1].name}</th>
-                                        <td className="pokemon__container__tables__weaknesses__cell">{onePokemon.resistances[1].multiplier}</td>
-                                    </tr>
-                                    <tr>
-                                        <th className="pokemon__container__tables__weaknesses__cell">{onePokemon.resistances[2].name}</th>
-                                        <td className="pokemon__container__tables__weaknesses__cell">{onePokemon.resistances[2].multiplier}</td>
-                                    </tr>
-                                    <tr>
-                                        <th className="pokemon__container__tables__weaknesses__cell">{onePokemon.resistances[3].name}</th>
-                                        <td className="pokemon__container__tables__weaknesses__cell">{onePokemon.resistances[3].multiplier}</td>
-                                    </tr>
-                                    <tr>
-                                        <th className="pokemon__container__tables__weaknesses__cell">{onePokemon.resistances[4].name}</th>
-                                        <td className="pokemon__container__tables__weaknesses__cell">{onePokemon.resistances[4].multiplier}</td>
-                                    </tr>
-                                    <tr>
-                                        <th className="pokemon__container__tables__weaknesses__cell">{onePokemon.resistances[5].name}</th>
-                                        <td className="pokemon__container__tables__weaknesses__cell">{onePokemon.resistances[5].multiplier}</td>
-                                    </tr>
-                                    <tr>
-                                        <th className="pokemon__container__tables__weaknesses__cell">{onePokemon.resistances[6].name}</th>
-                                        <td className="pokemon__container__tables__weaknesses__cell">{onePokemon.resistances[6].multiplier}</td>
-                                    </tr>
-                                    <tr>
-                                        <th className="pokemon__container__tables__weaknesses__cell">{onePokemon.resistances[7].name}</th>
-                                        <th className="pokemon__container__tables__weaknesses__cell">{onePokemon.resistances[7].multiplier}</th>
-                                    </tr>
-                                    <tr>
-                                        <th className="pokemon__container__tables__weaknesses__cell">{onePokemon.resistances[8].name}</th>
-                                        <td className="pokemon__container__tables__weaknesses__cell">{onePokemon.resistances[8].multiplier}</td>
-                                    </tr>
+                                    ))}
                                 </td>
 
                                 <td className="pokemon__container__tables__weaknesses__column">
-                                    <tr>
-                                        <th className="pokemon__container__tables__weaknesses__cell">{onePokemon.resistances[9].name}</th>
-                                        <td className="pokemon__container__tables__weaknesses__cell">{onePokemon.resistances[9].multiplier}</td>
+                                {onePokemon.resistances.slice(9, 18).map((resistance) => (
+                                        <tr>
+                                            <th className="pokemon__container__tables__weaknesses__cell">{resistance.name}</th>
+                                            {resistance.multiplier === 4 ? 
+                                            <td className='pokemon__container__tables__weaknesses__cell--red'>{resistance.multiplier}</td>
+                                                :
+                                                resistance.multiplier === 2 ? 
+                                                    <td className='pokemon__container__tables__weaknesses__cell--orange'>{resistance.multiplier}</td>
+                                                    :
+                                                    resistance.multiplier === 1 ?
+                                                        <td className='pokemon__container__tables__weaknesses__cell--yellow'>{resistance.multiplier}</td>
+                                                        :
+                                                        resistance.multiplier === 0.5 ?
+                                                        <td className='pokemon__container__tables__weaknesses__cell--green'>{resistance.multiplier}</td>
+                                                            :
+                                                            resistance.multiplier === 0.25 ?
+                                                            <td className='pokemon__container__tables__weaknesses__cell--blue'>{resistance.multiplier}</td>
+                                                                :
+                                                                resistance.multiplier === 0 ?
+                                                                <td className='pokemon__container__tables__weaknesses__cell--white'>{resistance.multiplier}</td>
+                                            :
+                                            <td className='pokemon__container__tables__weaknesses__cell'>{resistance.multiplier}</td>
+                                    }
                                     </tr>
-                                    <tr>
-                                        <th className="pokemon__container__tables__weaknesses__cell">{onePokemon.resistances[10].name}</th>
-                                        <td className="pokemon__container__tables__weaknesses__cell">{onePokemon.resistances[10].multiplier}</td>
-                                    </tr>
-                                    <tr>
-                                        <th className="pokemon__container__tables__weaknesses__cell">{onePokemon.resistances[11].name}</th>
-                                        <td className="pokemon__container__tables__weaknesses__cell">{onePokemon.resistances[11].multiplier}</td>
-                                    </tr>
-                                    <tr>
-                                        <th className="pokemon__container__tables__weaknesses__cell">{onePokemon.resistances[12].name}</th>
-                                        <td className="pokemon__container__tables__weaknesses__cell">{onePokemon.resistances[12].multiplier}</td>
-                                    </tr>
-                                    <tr>
-                                        <th className="pokemon__container__tables__weaknesses__cell">{onePokemon.resistances[13].name}</th>
-                                        <td className="pokemon__container__tables__weaknesses__cell">{onePokemon.resistances[13].multiplier}</td>
-                                    </tr>
-                                    <tr>
-                                        <th className="pokemon__container__tables__weaknesses__cell">{onePokemon.resistances[14].name}</th>
-                                        <td className="pokemon__container__tables__weaknesses__cell">{onePokemon.resistances[14].multiplier}</td>
-                                    </tr>
-                                    <tr>
-                                        <th className="pokemon__container__tables__weaknesses__cell">{onePokemon.resistances[15].name}</th>
-                                        <td className="pokemon__container__tables__weaknesses__cell">{onePokemon.resistances[15].multiplier}</td>
-                                    </tr>
-                                    <tr>
-                                        <th className="pokemon__container__tables__weaknesses__cell">{onePokemon.resistances[16].name}</th>
-                                        <td className="pokemon__container__tables__weaknesses__cell">{onePokemon.resistances[16].multiplier}</td>
-                                    </tr>
-                                    <tr>
-                                        <th className="pokemon__container__tables__weaknesses__cell">{onePokemon.resistances[17].name}</th>
-                                        <td className="pokemon__container__tables__weaknesses__cell">{onePokemon.resistances[17].multiplier}</td>
-                                    </tr>
+                                    ))}
                                 </td>
-
-
 
                             </table>
                         </div>
