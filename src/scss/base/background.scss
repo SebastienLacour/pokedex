@@ -21,7 +21,7 @@
         height: $background-size;
         z-index: -1;
         position: absolute;    
-        background: radial-gradient(circle, rgba($color: $background-plant, $alpha: $background-type-opacity), rgba($color: $background-color, $alpha: $background-primary-opacity))
+        background: radial-gradient(circle, rgba($color: $background-plant, $alpha: $background-type-opacity), rgba($color: $background-color, $alpha: $background-primary-opacity));
     }
 
     &__electrik{

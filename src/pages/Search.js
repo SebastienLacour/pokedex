@@ -27,7 +27,8 @@ function Search() {
     const [type, setType] = useState("")
 
     const inputSearchRef = useRef()
-    const inputTypeRef = useRef()
+    const inputTypeRef = useRef()    
+    
 
     function searchHandler(e){
         
@@ -39,9 +40,7 @@ function Search() {
         setType(e.target.value)
     }
 
-    const searchData = pokemon.filter((item) => item.name.fr.toLowerCase().includes(value.toLowerCase()))
-    
-    
+    const searchData = pokemon.filter((item) => item.name.fr.toLowerCase().includes(value.toLowerCase()))   
 
     return (
         <div>

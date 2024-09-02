@@ -225,8 +225,8 @@ function Pokemon() {
 
                                 </div>
 
-                                :
-                                <div></div>
+                            :
+                            <div></div>
                         }
 
 
@@ -258,11 +258,13 @@ function Pokemon() {
                         </div>
 
                         {
-                            onePokemon.evolution.mega ?
-                                <div className='pokemon__container__mega-evolution'>
-                                    <h2>Méga évolution</h2>
-                                    <div className='pokemon__container__mega-evolution__flex'>
-                                        {onePokemon.evolution.mega.map((item) => (
+                            onePokemon.evolution ? 
+                                <div>
+                            {onePokemon.evolution.mega ?
+                                 <div className='pokemon__container__mega-evolution'>
+                                     <h2>Méga évolution</h2>
+                                     <div className='pokemon__container__mega-evolution__flex'>
+                                         {onePokemon.evolution.mega.map((item) => (
                                             <div className='pokemon__container__mega-evolution__item'>
                                                 <strong>{item.orbe}</strong>
                                                 <img className='pokemon__container__mega-evolution__item--img' src={item.sprites.regular} alt={item.orbe} />
@@ -273,7 +275,13 @@ function Pokemon() {
                                 :
                                 <div>
 
-                                </div>
+                                </div>}
+
+                            </div>
+                            :
+                            <div>
+
+                            </div>
                         }
 
 

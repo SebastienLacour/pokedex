@@ -33,15 +33,13 @@ function Compare() {
     const FirstPokemonRef = useRef()
     const SecondPokemonRef = useRef()
 
+    let pokemonToCompare = []
 
     function compareHandler() {
-        let pokemonToCompare = [pokemon.find((el) => el.name.fr === FirstPokemonRef.current.value), pokemon.find((el) => el.name.fr === SecondPokemonRef.current.value)]
-        console.log(pokemonToCompare);
+        pokemonToCompare = [pokemon.find((el) => el.name.fr === FirstPokemonRef.current.value), pokemon.find((el) => el.name.fr === SecondPokemonRef.current.value)]
 
         localStorage.setItem("pokemons", JSON.stringify(pokemonToCompare))
-
     }
-
 
     return (
         <div>
@@ -50,22 +48,35 @@ function Compare() {
                 <h1>Comparaison de pokémons</h1>
                 <p className='compare__intro'>Veuillez sélectionner deux pokémons</p>
                 <div className='compare__selects'>
-                    <select name="pokemonOne" id="" className='compare__selects__item' placeholder="Choisissez un Pokémon" ref={FirstPokemonRef}>
-                        <option value="">Sélectionnez un pokémon</option>
-                        {sortedPokemon.map((pokemon) => (
-                            <option value={pokemon.name.fr}>{pokemon.name.fr}</option>
-                        ))}
-                    </select>
-                    <select name="pokemonTwo" id="" className='compare__selects__item' placeholder="Choisissez un Pokémon" ref={SecondPokemonRef}>
-                        <option value="">Sélectionnez un pokémon</option>
-                        {sortedPokemon.map((pokemon) => (
-                            <option value={pokemon.name.fr}>{pokemon.name.fr}</option>
-                        ))}
-                    </select>
+
+                    <div className='compare__selects__container'>
+                        <select name="pokemonOne" id="" className='compare__selects__item' ref={FirstPokemonRef}>
+                            <option value="null">Sélectionnez un pokémon</option>
+                            {sortedPokemon.map((pokemon) => (
+                                <option value={pokemon.name.fr}>{pokemon.name.fr}</option>
+                            ))}
+                        </select>
+                        <div className='compare__selects__container__pokemon'>
+                            {}
+                        </div>
+                    </div>
+
+                    <div className='compare__selects__container'>
+                        <select name="pokemonTwo" id="" className='compare__selects__item' ref={SecondPokemonRef}>
+                            <option value="null">Sélectionnez un pokémon</option>
+                            {sortedPokemon.map((pokemon) => (
+                                <option value={pokemon.name.fr}>{pokemon.name.fr}</option>
+                            ))}
+                        </select>
+                    </div>
+
                 </div>
-                <div>
+                <div className='compare__pokemons'>
+
+                </div>
+                <div className="compare__buttons">
                     <Link to='/compared'>
-                        <button className="compare__button" onClick={compareHandler}>Comparer !!!</button>
+                        <button className='compare__buttons__item' onClick={compareHandler}>Comparer !!!</button>
                     </Link>
                 </div>
             </main>
