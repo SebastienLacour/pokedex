@@ -2,7 +2,6 @@
 
     &__fire{
         width: 100%;
-        height: $background-size;
         z-index: -1;
         position: absolute;    
         background: radial-gradient(circle, rgba($color: $background-fire, $alpha: $background-type-opacity), rgba($color: $background-color, $alpha: $background-primary-opacity))
@@ -10,7 +9,6 @@
 
     &__water{
         width: 100%;
-        height: $background-size;
         z-index: -1;
         position: absolute;    
         background: radial-gradient(circle, rgba($color: $background-water, $alpha: $background-type-opacity), rgba($color: $background-color, $alpha: $background-primary-opacity))
@@ -18,7 +16,7 @@
 
     &__plant{
         width: 100%;
-        height: $background-size;
+        flex-grow: 2;
         z-index: -1;
         position: absolute;    
         background: radial-gradient(circle, rgba($color: $background-plant, $alpha: $background-type-opacity), rgba($color: $background-color, $alpha: $background-primary-opacity));
@@ -26,7 +24,6 @@
 
     &__electrik{
         width: 100%;
-        height: $background-size;
         z-index: -1;
         position: absolute;    
         background: radial-gradient(circle, rgba($color: $background-elektric, $alpha: $background-type-opacity), rgba($color: $background-color, $alpha: $background-primary-opacity))
@@ -34,7 +31,6 @@
 
     &__ground{
         width: 100%;
-        height: $background-size;
         z-index: -1;
         position: absolute;    
         background: radial-gradient(circle, rgba($color: $background-ground, $alpha: $background-type-opacity), rgba($color: $background-color, $alpha: $background-primary-opacity))
@@ -42,7 +38,6 @@
 
     &__rock{
         width: 100%;
-        height: $background-size;
         z-index: -1;
         position: absolute;    
         background: radial-gradient(circle, rgba($color: $background-rock, $alpha: $background-type-opacity), rgba($color: $background-color, $alpha: $background-primary-opacity))
@@ -50,7 +45,6 @@
 
     &__steel{
         width: 100%;
-        height: $background-size;
         z-index: -1;
         position: absolute;    
         background: radial-gradient(circle, rgba($color: $background-steel, $alpha: $background-type-opacity), rgba($color: $background-color, $alpha: $background-primary-opacity))
@@ -58,7 +52,6 @@
 
     &__fight{
         width: 100%;
-        height: $background-size;
         z-index: -1;
         position: absolute;    
         background: radial-gradient(circle, rgba($color: $background-fight, $alpha: $background-type-opacity), rgba($color: $background-color, $alpha: $background-primary-opacity))
@@ -66,7 +59,6 @@
 
     &__fly{
         width: 100%;
-        height: $background-size;
         z-index: -1;
         position: absolute;    
         background: radial-gradient(circle, rgba($color: $background-fly, $alpha: $background-type-opacity), rgba($color: $background-color, $alpha: $background-primary-opacity))
@@ -74,7 +66,6 @@
 
     &__ice{
         width: 100%;
-        height: $background-size;
         z-index: -1;
         position: absolute;    
         background: radial-gradient(circle, rgba($color: $background-ice, $alpha: $background-type-opacity), rgba($color: $background-color, $alpha: $background-primary-opacity))
@@ -82,7 +73,6 @@
 
     &__poison{
         width: 100%;
-        height: $background-size;
         z-index: -1;
         position: absolute;    
         background: radial-gradient(circle, rgba($color: $background-poison, $alpha: $background-type-opacity), rgba($color: $background-color, $alpha: $background-primary-opacity))
@@ -90,7 +80,6 @@
 
     &__bug{
         width: 100%;
-        height: $background-size;
         z-index: -1;
         position: absolute;    
         background: radial-gradient(circle, rgba($color: $background-bug, $alpha: $background-type-opacity), rgba($color: $background-color, $alpha: $background-primary-opacity))
@@ -98,7 +87,6 @@
 
     &__psy{
         width: 100%;
-        height: $background-size;
         z-index: -1;
         position: absolute;    
         background: radial-gradient(circle, rgba($color: $background-psy, $alpha: $background-type-opacity), rgba($color: $background-color, $alpha: $background-primary-opacity))
@@ -106,7 +94,6 @@
 
     &__dark{
         width: 100%;
-        height: $background-size;
         z-index: -1;
         position: absolute;    
         background: radial-gradient(circle, rgba($color: $background-dark, $alpha: $background-type-opacity), rgba($color: $background-color, $alpha: $background-primary-opacity))
@@ -114,7 +101,6 @@
 
     &__spirit{
         width: 100%;
-        height: $background-size;
         z-index: -1;
         position: absolute;    
         background: radial-gradient(circle, rgba($color: $background-spirit, $alpha: $background-type-opacity), rgba($color: $background-color, $alpha: $background-primary-opacity))
@@ -122,7 +108,6 @@
 
     &__dragon{
         width: 100%;
-        height: $background-size;
         z-index: -1;
         position: absolute;    
         background: radial-gradient(circle, rgba($color: $background-dragon, $alpha: $background-type-opacity), rgba($color: $background-color, $alpha: $background-primary-opacity))
@@ -130,7 +115,6 @@
 
     &__fairy{
         width: 100%;
-        height: $background-size;
         z-index: -1;
         position: absolute;    
         background: radial-gradient(circle, rgba($color: $background-fairy, $alpha: $background-type-opacity), rgba($color: $background-color, $alpha: $background-primary-opacity))
@@ -138,7 +122,6 @@
 
     &__normal{
         width: 100%;
-        height: $background-size;
         z-index: -1;
         position: absolute;    
         background: radial-gradient(circle, rgba($color: $background-normal, $alpha: $background-type-opacity), rgba($color: $background-color, $alpha: $background-primary-opacity))

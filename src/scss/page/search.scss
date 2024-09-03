@@ -6,6 +6,8 @@
     align-items: center;
     flex-grow: 1;
     color: $page-color;
+    background: rgba($color: $background-color, $alpha: 0.8);
+
 
     &__input{
         margin-top: $article-margin;

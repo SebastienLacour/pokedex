@@ -1,0 +1,11 @@
+.loader{
+    text-align: center;
+
+    &__img{
+        width: 20%;
+        height: 20%;    
+        animation-name: loading;
+        animation-duration: 1s;
+    }
+}
+

@@ -3,6 +3,8 @@
     flex-direction: column;
     align-items: center;
     color: $page-color;
+    background: rgba($color: $background-color, $alpha: 0.8);
+
 
     &__pokemon{
         display: flex;

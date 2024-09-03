@@ -4,6 +4,7 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
+    flex-grow: 0;
     
     &__div{
         width: 100%;
