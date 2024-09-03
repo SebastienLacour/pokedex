@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import Header from '../components/Header'
 import { Link, useParams } from 'react-router-dom'
-import Background from '../components/Background';
 import Footer from '../components/Footer';
 import Loader from '../components/Loader';
 
@@ -140,19 +139,15 @@ function Pokemon() {
 
     }
 
-
-
     return (
         <div>
-            <div className='container'>
                 <Header list={false} search={false} compare={false} />
                 <main className='pokemon'>
-                    {/* <Background backgroundType={background} /> */}
-                    <div className={background}>
+
 
                         {onePokemon !== undefined ?
 
-                            <div className='pokemon__container'>
+                            <div className={background}>
 
                                 <h1 className="pokemon__container__title">{onePokemon.name.fr}</h1>
 
@@ -394,9 +389,7 @@ function Pokemon() {
                             </div>
 
                         }
-                    </div>
                 </main>
-            </div>
             <Footer />
         </div>
     )
