@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react'
 import Header from '../components/Header'
 import PokeArticle from '../components/PokeArticle';
 import Loader from '../components/Loader';
+import Footer from '../components/Footer';
 
 function Pokelist() {
 
@@ -267,6 +268,8 @@ function Pokelist() {
                 </div>
 
             </main>
+
+            <Footer />
 
         </div>
     )
