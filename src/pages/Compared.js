@@ -1,6 +1,8 @@
 import React from 'react'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
+
+// Import des images des types
 import normal from '../assets/type_normal.png'
 import fly from '../assets/type_vol.png'
 import fire from '../assets/type_feu.png'

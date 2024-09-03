@@ -4,7 +4,8 @@
         width: 100%;
         z-index: -1;
         position: absolute;    
-        background: radial-gradient(circle, rgba($color: $background-fire, $alpha: $background-type-opacity), rgba($color: $background-color, $alpha: $background-primary-opacity))
+        background: radial-gradient(circle, rgba($color: $background-fire, $alpha: $background-type-opacity), rgba($color: $background-color, $alpha: $background-primary-opacity));
+        color: black;
     }
 
     &__water{
@@ -26,7 +27,8 @@
         width: 100%;
         z-index: -1;
         position: absolute;    
-        background: radial-gradient(circle, rgba($color: $background-elektric, $alpha: $background-type-opacity), rgba($color: $background-color, $alpha: $background-primary-opacity))
+        background: radial-gradient(circle, rgba($color: $background-elektric, $alpha: $background-type-opacity), rgba($color: $background-color, $alpha: $background-primary-opacity));
+        color: black;
     }
 
     &__ground{
@@ -47,14 +49,16 @@
         width: 100%;
         z-index: -1;
         position: absolute;    
-        background: radial-gradient(circle, rgba($color: $background-steel, $alpha: $background-type-opacity), rgba($color: $background-color, $alpha: $background-primary-opacity))
+        background: radial-gradient(circle, rgba($color: $background-steel, $alpha: $background-type-opacity), rgba($color: $background-color, $alpha: $background-primary-opacity));
+        color: black;
     }
 
     &__fight{
         width: 100%;
         z-index: -1;
         position: absolute;    
-        background: radial-gradient(circle, rgba($color: $background-fight, $alpha: $background-type-opacity), rgba($color: $background-color, $alpha: $background-primary-opacity))
+        background: radial-gradient(circle, rgba($color: $background-fight, $alpha: $background-type-opacity), rgba($color: $background-color, $alpha: $background-primary-opacity));
+        color: black;
     }
 
     &__fly{
@@ -68,7 +72,8 @@
         width: 100%;
         z-index: -1;
         position: absolute;    
-        background: radial-gradient(circle, rgba($color: $background-ice, $alpha: $background-type-opacity), rgba($color: $background-color, $alpha: $background-primary-opacity))
+        background: radial-gradient(circle, rgba($color: $background-ice, $alpha: $background-type-opacity), rgba($color: $background-color, $alpha: $background-primary-opacity));
+        color: black;
     }
 
     &__poison{
@@ -82,7 +87,8 @@
         width: 100%;
         z-index: -1;
         position: absolute;    
-        background: radial-gradient(circle, rgba($color: $background-bug, $alpha: $background-type-opacity), rgba($color: $background-color, $alpha: $background-primary-opacity))
+        background: radial-gradient(circle, rgba($color: $background-bug, $alpha: $background-type-opacity), rgba($color: $background-color, $alpha: $background-primary-opacity));
+        color: black;
     }
 
     &__psy{
@@ -124,7 +130,8 @@
         width: 100%;
         z-index: -1;
         position: absolute;    
-        background: radial-gradient(circle, rgba($color: $background-normal, $alpha: $background-type-opacity), rgba($color: $background-color, $alpha: $background-primary-opacity))
+        background: radial-gradient(circle, rgba($color: $background-normal, $alpha: $background-type-opacity), rgba($color: $background-color, $alpha: $background-primary-opacity));
+        color: black
     }
 
 }

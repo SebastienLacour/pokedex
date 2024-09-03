@@ -69,6 +69,8 @@
             margin-top: 180px;
             width: 15%;
             background-color: rgba($color: $background-color, $alpha: 0.85);
+            color: $page-color;
+
 
             &__container-img{
                 display: flex;
@@ -137,6 +139,8 @@
                     border-collapse: collapse;
                     padding: $table-padding;
                     background-color: rgba($color: $background-color, $alpha: 0.7);
+                    color: $page-color;
+
                 }
             }
 
@@ -153,6 +157,8 @@
                     border-collapse: collapse;
                     padding: $table-padding;
                     background-color: rgba($color: $background-color, $alpha: 0.7);
+                    color: $page-color;
+
 
                     &--orange{
                         border: $border-width ridge $page-color;
@@ -224,9 +230,18 @@
                     border-radius: 10px;
                     padding: $table-padding;
                     background-color: rgba($color: $background-color, $alpha: 0.7);
+                    color: $page-color;
+
                 }
             }
         }
 
+    }
+
+    &__loading{
+        height: 100vh;
+        width: 100%;
+        background-color: rgba($color: $background-color, $alpha: 0.7);
+        padding-top: 20%
     }
 }

@@ -9,7 +9,7 @@ function Home() {
         <main className='home'>
             <h1 className='home__title'>Bienvenue dans notre pokedex</h1>
 
-            <p>Ici, vous pouvez recherche des informations concernant vos pokémons favoris</p>
+            <p>Ici, vous pouvez rechercher des informations concernant vos pokémons favoris</p>
         </main>
         <Footer />
     </div>
