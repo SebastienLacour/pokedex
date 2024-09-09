@@ -7,7 +7,7 @@
     flex-grow: 1;
     color: $page-color;
     background: rgba($color: $background-color, $alpha: 0.8);
-
+    padding-top: $page-padding;
 
     &__input{
         margin-top: $article-margin;

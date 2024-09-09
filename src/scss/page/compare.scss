@@ -6,7 +6,7 @@
     align-items: center;
     color: $page-color;
     background: rgba($color: $background-color, $alpha: 0.8);
-
+    padding-top: $page-padding;
 
     &__intro {
         margin-top: 50px;

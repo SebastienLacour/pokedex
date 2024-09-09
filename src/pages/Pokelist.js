@@ -1,14 +1,19 @@
 // Import des fonctions et des composants nécessaires
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import Header from '../components/Header'
 import PokeArticle from '../components/PokeArticle';
 import Loader from '../components/Loader';
 import Footer from '../components/Footer';
+import { LanguageContext } from '../context/LanguageContext';
 
 function Pokelist() {
 
     // UseState pour récupérer tous les pokémons
     const [pokemon, setPokemon] = useState([])
+
+    // On récupère le contexte de changement de langue des noms de pokémons
+    const language = useContext(LanguageContext)
+
 
     // Fetch pour récupérer tous les pokémons et les place dans la variable pokemon
     const fetchPokemon = () => {
@@ -23,8 +28,6 @@ function Pokelist() {
     useEffect(() => {
         fetchPokemon()
     }, [])
-
-    console.log(pokemon);
 
 
     // On supprime le premier index du tableau qui n'est pas utile
@@ -89,16 +92,21 @@ function Pokelist() {
         setGeneration(9)
     }
 
+
     return (
         <div>
             <Header list={true} search={false} compare={false} />
             <main className="pokelist">
 
                 {/* Titre de la page */}
-                <h1>Liste des pokémons</h1>
+
+                    <h1>Liste des pokémons</h1>
+
 
                 <div className="pokelist__generation-choice">
+
                     <h2 className='pokelist__generation-choice__title'>choix de la génération</h2>
+
                     <div className="pokelist__generation-choice__buttons">
                         <button className='pokelist__generation-choice__buttons__button' onClick={firstGenerationHandler}>1</button>
                         <button className='pokelist__generation-choice__buttons__button' onClick={secondGenerationHandler}>2</button>
@@ -111,13 +119,14 @@ function Pokelist() {
                         <button className='pokelist__generation-choice__buttons__button' onClick={ninethGenerationHandler}>9</button>
                     </div>
                 </div>
+
                 <div>
                     {pokemon.length !== 0 ?
                         <div className='pokelist__pokemons'>
 
                             {generation === 1 ?
                                 firstGenerationPokemon.map((item) => (
-                                    <PokeArticle pokemon={item} key={item.id} />
+                                    <PokeArticle pokemon={item} key={item.id} language={language} />
                                 ))
                                 :
                                 <div className='pokelist__pokemons'>
@@ -204,7 +213,6 @@ function Pokelist() {
                         </div>
                     }
                 </div>
-
             </main>
 
             <Footer />

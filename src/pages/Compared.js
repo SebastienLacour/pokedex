@@ -1,6 +1,7 @@
-import React from 'react'
+import { useContext } from 'react'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
+import { LanguageContext } from '../context/LanguageContext'
 
 // Import des images des types
 import normal from '../assets/type_normal.png'
@@ -27,6 +28,9 @@ function Compared() {
     // Récupération des données du localStorage
     const comparedPokemon = JSON.parse(localStorage.getItem("pokemons"))
     console.log(comparedPokemon);
+
+    // Récupération de la langue du context
+    const language = useContext(LanguageContext)
 
     // Tableau d'objet contenant tous les types : le nom et son image
     const types = [
@@ -102,7 +106,7 @@ function Compared() {
             name: "fée",
             img: fairy
         },
-    ]    
+    ]
 
 
     return (
@@ -114,12 +118,16 @@ function Compared() {
                 <div className='compared__pokemon'>
 
                     <div className='compared__pokemon__item compared__pokemon__item--left'>
-                        <h2>{comparedPokemon[0].name.fr}</h2>
+                        {language === "anglais" ?
+                            <h2>{comparedPokemon[0].name.en}</h2>
+                            :
+                            <h2>{comparedPokemon[0].name.fr}</h2>
+                        }
                         <img src={comparedPokemon[0].sprites.regular} alt={comparedPokemon[0].name.fr} />
                         <div className='compared__pokemon__item__types'>
                             <h3>types</h3>
                             {comparedPokemon[0].types.map((type) => (
-                                <img src={type.image} alt={type.name} className='compared__pokemon__item__types__img'/>
+                                <img src={type.image} alt={type.name} className='compared__pokemon__item__types__img' />
                             ))}
                         </div>
                         <div className='compared__pokemon__item__vulnerabilities'>
@@ -129,14 +137,14 @@ function Compared() {
                                     <h4>grosses faiblesses</h4>
                                     <div className="compared__pokemon__item__vulnerabilities__item__flex">
                                         {comparedPokemon[0].resistances.filter((el) => el.multiplier === 4).map((resistance) => (
-                                                resistance ? 
+                                            resistance ?
                                                 <div>
-                                                    <img src={types.find((item) => item.name.toLowerCase() === resistance.name.toLowerCase()).img} alt={resistance.name} className="compared__pokemon__item__vulnerabilities__item__flex__img"/>
+                                                    <img src={types.find((item) => item.name.toLowerCase() === resistance.name.toLowerCase()).img} alt={resistance.name} className="compared__pokemon__item__vulnerabilities__item__flex__img" />
                                                 </div>
                                                 :
                                                 <div>
 
-                                                </div>             
+                                                </div>
                                         ))}
                                     </div>
                                 </div>
@@ -145,14 +153,14 @@ function Compared() {
                                     <h4>faiblesses</h4>
                                     <div className="compared__pokemon__item__vulnerabilities__item__flex">
                                         {comparedPokemon[0].resistances.filter((el) => el.multiplier === 2).map((resistance) => (
-                                                resistance ? 
+                                            resistance ?
                                                 <div>
-                                                    <img src={types.find((item) => item.name.toLowerCase() === resistance.name.toLowerCase()).img} alt={resistance.name} className="compared__pokemon__item__vulnerabilities__item__flex__img"/>
+                                                    <img src={types.find((item) => item.name.toLowerCase() === resistance.name.toLowerCase()).img} alt={resistance.name} className="compared__pokemon__item__vulnerabilities__item__flex__img" />
                                                 </div>
                                                 :
                                                 <div>
 
-                                                </div>             
+                                                </div>
 
                                         ))}
                                     </div>
@@ -162,14 +170,14 @@ function Compared() {
                                     <h4>resistances</h4>
                                     <div className="compared__pokemon__item__vulnerabilities__item__flex">
                                         {comparedPokemon[0].resistances.filter((el) => el.multiplier === 0.5).map((resistance) => (
-                                                resistance ? 
+                                            resistance ?
                                                 <div>
-                                                    <img src={types.find((item) => item.name.toLowerCase() === resistance.name.toLowerCase()).img} alt={resistance.name} className="compared__pokemon__item__vulnerabilities__item__flex__img"/>
+                                                    <img src={types.find((item) => item.name.toLowerCase() === resistance.name.toLowerCase()).img} alt={resistance.name} className="compared__pokemon__item__vulnerabilities__item__flex__img" />
                                                 </div>
                                                 :
                                                 <div>
 
-                                                </div>             
+                                                </div>
                                         ))}
                                     </div>
                                 </div>
@@ -178,14 +186,14 @@ function Compared() {
                                     <h4>grosses resistances</h4>
                                     <div className="compared__pokemon__item__vulnerabilities__item__flex">
                                         {comparedPokemon[0].resistances.filter((el) => el.multiplier === 0.25).map((resistance) => (
-                                                resistance ? 
+                                            resistance ?
                                                 <div>
-                                                    <img src={types.find((item) => item.name.toLowerCase() === resistance.name.toLowerCase()).img} alt={resistance.name} className="compared__pokemon__item__vulnerabilities__item__flex__img"/>
+                                                    <img src={types.find((item) => item.name.toLowerCase() === resistance.name.toLowerCase()).img} alt={resistance.name} className="compared__pokemon__item__vulnerabilities__item__flex__img" />
                                                 </div>
                                                 :
                                                 <div>
 
-                                                </div>             
+                                                </div>
                                         ))}
                                     </div>
                                 </div>
@@ -227,7 +235,7 @@ function Compared() {
                         <div className='compared__pokemon__item__types'>
                             <h3>types</h3>
                             {comparedPokemon[1].types.map((type) => (
-                                <img src={type.image} alt={type.name} className='compared__pokemon__item__types__img'/>
+                                <img src={type.image} alt={type.name} className='compared__pokemon__item__types__img' />
                             ))}
                         </div>
                         <div className='compared__pokemon__item__vulnerabilities'>
@@ -239,14 +247,14 @@ function Compared() {
                                     <h4>grosses faiblesses</h4>
                                     <div className='compared__pokemon__item__vulnerabilities__item__flex'>
                                         {comparedPokemon[1].resistances.filter((el) => el.multiplier === 4).map((resistance) => (
-                                                resistance ? 
+                                            resistance ?
                                                 <div>
-                                                    <img src={types.find((item) => item.name.toLowerCase() === resistance.name.toLowerCase()).img} alt={resistance.name} className="compared__pokemon__item__vulnerabilities__item__flex__img"/>
+                                                    <img src={types.find((item) => item.name.toLowerCase() === resistance.name.toLowerCase()).img} alt={resistance.name} className="compared__pokemon__item__vulnerabilities__item__flex__img" />
                                                 </div>
                                                 :
                                                 <div>
 
-                                                </div>             
+                                                </div>
                                         ))}
                                     </div>
                                 </div>
@@ -255,14 +263,14 @@ function Compared() {
                                     <h4>faiblesses</h4>
                                     <div className='compared__pokemon__item__vulnerabilities__item__flex'>
                                         {comparedPokemon[1].resistances.filter((el) => el.multiplier === 2).map((resistance) => (
-                                                resistance ? 
+                                            resistance ?
                                                 <div>
-                                                    <img src={types.find((item) => item.name.toLowerCase() === resistance.name.toLowerCase()).img} alt={resistance.name} className="compared__pokemon__item__vulnerabilities__item__flex__img"/>
+                                                    <img src={types.find((item) => item.name.toLowerCase() === resistance.name.toLowerCase()).img} alt={resistance.name} className="compared__pokemon__item__vulnerabilities__item__flex__img" />
                                                 </div>
                                                 :
                                                 <div>
 
-                                                </div>             
+                                                </div>
                                         ))}
                                     </div>
                                 </div>
@@ -271,14 +279,14 @@ function Compared() {
                                     <h4>resistances</h4>
                                     <div className='compared__pokemon__item__vulnerabilities__item__flex'>
                                         {comparedPokemon[1].resistances.filter((el) => el.multiplier === 0.5).map((resistance) => (
-                                                resistance ? 
+                                            resistance ?
                                                 <div>
-                                                    <img src={types.find((item) => item.name.toLowerCase() === resistance.name.toLowerCase()).img} alt={resistance.name} className="compared__pokemon__item__vulnerabilities__item__flex__img"/>
+                                                    <img src={types.find((item) => item.name.toLowerCase() === resistance.name.toLowerCase()).img} alt={resistance.name} className="compared__pokemon__item__vulnerabilities__item__flex__img" />
                                                 </div>
                                                 :
                                                 <div>
 
-                                                </div>             
+                                                </div>
                                         ))}
                                     </div>
                                 </div>
@@ -287,14 +295,14 @@ function Compared() {
                                     <h4>grosses resistances</h4>
                                     <div className='compared__pokemon__item__vulnerabilities__item__flex'>
                                         {comparedPokemon[1].resistances.filter((el) => el.multiplier === 0.25).map((resistance) => (
-                                                resistance ? 
+                                            resistance ?
                                                 <div>
-                                                    <img src={types.find((item) => item.name.toLowerCase() === resistance.name.toLowerCase()).img} alt={resistance.name} className="compared__pokemon__item__vulnerabilities__item__flex__img"/>
+                                                    <img src={types.find((item) => item.name.toLowerCase() === resistance.name.toLowerCase()).img} alt={resistance.name} className="compared__pokemon__item__vulnerabilities__item__flex__img" />
                                                 </div>
                                                 :
                                                 <div>
 
-                                                </div>             
+                                                </div>
                                         ))}
                                     </div>
                                 </div>

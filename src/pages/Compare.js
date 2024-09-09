@@ -1,7 +1,8 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState, useEffect, useRef, useContext } from 'react'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import { Link } from 'react-router-dom'
+import {LanguageContext} from '../context/LanguageContext'
 
 function Compare() {
 
@@ -18,13 +19,23 @@ function Compare() {
         fetchHandler()
     }, [])
 
+    const language = useContext(LanguageContext)
 
     const sortedPokemon = pokemon.slice(1).sort((a, b) => {
-        if (a.name.fr.toLowerCase() > b.name.fr.toLowerCase()) {
-            return 1
-        }
-        if (a.name.fr.toLowerCase() < b.name.fr.toLowerCase()) {
-            return -1
+        if(language === "anglais") {
+            if (a.name.en.toLowerCase() > b.name.en.toLowerCase()) {
+                return 1
+            }
+            if (a.name.en.toLowerCase() < b.name.en.toLowerCase()) {
+                return -1
+            }
+        } else {
+            if (a.name.fr.toLowerCase() > b.name.fr.toLowerCase()) {
+                return 1
+            }
+            if (a.name.fr.toLowerCase() < b.name.fr.toLowerCase()) {
+                return -1
+            }
         }
         return 0
     })
@@ -36,7 +47,11 @@ function Compare() {
     let pokemonToCompare = []
 
     function compareHandler() {
-        pokemonToCompare = [pokemon.find((el) => el.name.fr === FirstPokemonRef.current.value), pokemon.find((el) => el.name.fr === SecondPokemonRef.current.value)]
+        if (language === "anglais") {
+            pokemonToCompare = [pokemon.find((el) => el.name.en === FirstPokemonRef.current.value), pokemon.find((el) => el.name.en === SecondPokemonRef.current.value)]
+        } else {
+            pokemonToCompare = [pokemon.find((el) => el.name.fr === FirstPokemonRef.current.value), pokemon.find((el) => el.name.fr === SecondPokemonRef.current.value)]
+        }
 
         localStorage.setItem("pokemons", JSON.stringify(pokemonToCompare))
     }
@@ -52,9 +67,15 @@ function Compare() {
                     <div className='compare__selects__container'>
                         <select name="pokemonOne" id="" className='compare__selects__item' ref={FirstPokemonRef}>
                             <option value="null">Sélectionnez un pokémon</option>
-                            {sortedPokemon.map((pokemon) => (
+                            {language === "anglais" ?
+                            sortedPokemon.map((pokemon) => (
+                                <option value={pokemon.name.en}>{pokemon.name.en}</option>
+                            ))
+                            :
+                            sortedPokemon.map((pokemon) => (
                                 <option value={pokemon.name.fr}>{pokemon.name.fr}</option>
-                            ))}
+                            ))
+                            }
                         </select>
                         <div className='compare__selects__container__pokemon'>
                             {}
@@ -64,9 +85,15 @@ function Compare() {
                     <div className='compare__selects__container'>
                         <select name="pokemonTwo" id="" className='compare__selects__item' ref={SecondPokemonRef}>
                             <option value="null">Sélectionnez un pokémon</option>
-                            {sortedPokemon.map((pokemon) => (
+                            {language === "anglais" ?
+                            sortedPokemon.map((pokemon) => (
+                                <option value={pokemon.name.en}>{pokemon.name.en}</option>
+                            ))
+                            :
+                            sortedPokemon.map((pokemon) => (
                                 <option value={pokemon.name.fr}>{pokemon.name.fr}</option>
-                            ))}
+                            ))
+                            }
                         </select>
                     </div>
 

@@ -1,7 +1,8 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState, useEffect, useRef, useContext } from 'react'
 import Header from '../components/Header'
 import PokeArticle from '../components/PokeArticle'
 import Footer from '../components/Footer'
+import { LanguageContext } from '../context/LanguageContext'
 
 function Search() {
 
@@ -40,7 +41,16 @@ function Search() {
         setType(e.target.value)
     }
 
-    const searchData = pokemon.filter((item) => item.name.fr.toLowerCase().includes(value.toLowerCase()))   
+    // On récupère le context de changement de langue
+    const language = useContext(LanguageContext)
+
+    let searchData = ""
+
+    if (language === "anglais") {
+        searchData = pokemon.filter((item) => item.name.en.toLowerCase().includes(value.toLowerCase()))   
+    } else {
+        searchData = pokemon.filter((item) => item.name.fr.toLowerCase().includes(value.toLowerCase()))   
+    }
 
     return (
         <div>
@@ -66,7 +76,7 @@ function Search() {
                     <div></div>
                     :
                     <input type="search" name='recherche de type' className='search__input' ref={inputTypeRef} onChange={searchTypeHandler}/>
-            }
+                }
             </main>
 
             <Footer/>
