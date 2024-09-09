@@ -47,9 +47,9 @@ function Search() {
     let searchData = ""
 
     if (language === "anglais") {
-        searchData = pokemon.filter((item) => item.name.en.toLowerCase().includes(value.toLowerCase()))   
+        searchData = pokemon.slice(1).filter((item) => item.name.en.toLowerCase().includes(value.toLowerCase()))   
     } else {
-        searchData = pokemon.filter((item) => item.name.fr.toLowerCase().includes(value.toLowerCase()))   
+        searchData = pokemon.slice(1).filter((item) => item.name.fr.toLowerCase().includes(value.toLowerCase()))   
     }
 
     return (
@@ -68,14 +68,6 @@ function Search() {
                 </div> 
                 :
                 <div className='search__list-empty'></div>
-                }
-
-                <h2>Cherchez un type</h2>
-
-                {searchData === String ? 
-                    <div></div>
-                    :
-                    <input type="search" name='recherche de type' className='search__input' ref={inputTypeRef} onChange={searchTypeHandler}/>
                 }
             </main>
 
