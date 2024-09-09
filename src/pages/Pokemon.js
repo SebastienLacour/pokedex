@@ -129,16 +129,16 @@ function Pokemon() {
             case "français":
                 pokemonName = onePokemon.name.fr
                 break;
-        
+
             case "anglais":
                 pokemonName = onePokemon.name.en
                 break;
-        
+
             default:
                 pokemonName = onePokemon.name.fr
                 break;
         }
-    
+
 
     }
 
@@ -161,6 +161,10 @@ function Pokemon() {
 
     }
 
+    const statDisplayed = document.querySelector('pokemon__container__stats__item__full-bar')
+    console.log(statDisplayed);
+
+
     return (
         <div>
             <Header list={false} search={false} compare={false} />
@@ -173,236 +177,282 @@ function Pokemon() {
 
                         <div className='pokemon__container'>
 
-                        <h1 className="pokemon__container__title">{pokemonName}</h1>
+                            <h1 className="pokemon__container__title">{pokemonName}</h1>
 
-                        {
-                            onePokemon.evolution ?
-                                <div className='pokemon__container__evolution'>
-                                    {
-                                        onePokemon.evolution.pre !== null ?
-                                            <div>
-                                                {
-                                                    onePokemon.evolution.pre.length >= 2 ?
-                                                        <div>
-                                                            <Link to={'/' + onePokemon.evolution.pre[1].name} className='pokemon__container__evolution__name pokemon__container__evolution__name--left'>
-                                                                {onePokemon.evolution.pre[1].name}
-                                                            </Link>
-                                                        </div>
-                                                        :
-                                                        <div>
-                                                            <Link to={'/' + onePokemon.evolution.pre[0].name} className='pokemon__container__evolution__name pokemon__container__evolution__name--left'>
-                                                                {onePokemon.evolution.pre[0].name}
-                                                            </Link>
-                                                        </div>
-                                                }
-                                            </div>
-                                            :
-                                            <div>
+                            {
+                                onePokemon.evolution ?
+                                    <div className='pokemon__container__evolution'>
+                                        {
+                                            onePokemon.evolution.pre !== null ?
+                                                <div>
+                                                    {
+                                                        onePokemon.evolution.pre.length >= 2 ?
+                                                            <div>
+                                                                <Link to={'/' + onePokemon.evolution.pre[1].name} className='pokemon__container__evolution__name pokemon__container__evolution__name--left'>
+                                                                    {onePokemon.evolution.pre[1].name}
+                                                                </Link>
+                                                            </div>
+                                                            :
+                                                            <div>
+                                                                <Link to={'/' + onePokemon.evolution.pre[0].name} className='pokemon__container__evolution__name pokemon__container__evolution__name--left'>
+                                                                    {onePokemon.evolution.pre[0].name}
+                                                                </Link>
+                                                            </div>
+                                                    }
+                                                </div>
+                                                :
+                                                <div>
 
-                                            </div>
-                                    }
+                                                </div>
+                                        }
 
-                                    {
-                                        onePokemon.evolution.next ?
-                                            <div>
-                                                {
-                                                    onePokemon.evolution.next.length >= 3 && id !== "Mystherbe" && id !== "Ptitard" && id !== "Tarsal" ?
-                                                        <div className='pokemon__container__evolution__group'>
-                                                            {
-                                                                onePokemon.evolution.next.map((evolution) => (
-                                                                    <Link to={'/' + evolution.name} className='pokemon__container__evolution__name pokemon__container__evolution__name--right'>
-                                                                        {evolution.name}
-                                                                    </Link>
-                                                                ))
-                                                            }
-                                                        </div>
-                                                        :
-                                                        <div>
-                                                            {
-                                                                id === "Ramoloss" || id === "Ortide" || id === "Têtarte" || id === "Kirlia" ?
-                                                                    <div className='pokemon__container__evolution__group'>
-                                                                        {
-                                                                            onePokemon.evolution.next.map((evolution) => (
-                                                                                <Link to={'/' + evolution.name} className='pokemon__container__evolution__name pokemon__container__evolution__name--right'>
-                                                                                    {evolution.name}
-                                                                                </Link>
-                                                                            ))
-                                                                        }
-                                                                    </div>
-                                                                    :
-                                                                    <div>
-                                                                        <Link to={'/' + onePokemon.evolution.next[0].name} className='pokemon__container__evolution__name pokemon__container__evolution__name--right'>
-                                                                            {onePokemon.evolution.next[0].name}
+                                        {
+                                            onePokemon.evolution.next ?
+                                                <div>
+                                                    {
+                                                        onePokemon.evolution.next.length >= 3 && id !== "Mystherbe" && id !== "Ptitard" && id !== "Tarsal" ?
+                                                            <div className='pokemon__container__evolution__group'>
+                                                                {
+                                                                    onePokemon.evolution.next.map((evolution) => (
+                                                                        <Link to={'/' + evolution.name} className='pokemon__container__evolution__name pokemon__container__evolution__name--right'>
+                                                                            {evolution.name}
                                                                         </Link>
-                                                                    </div>
-                                                            }
-                                                        </div>
-                                                }
-                                            </div>
-                                            :
-                                            <div>
+                                                                    ))
+                                                                }
+                                                            </div>
+                                                            :
+                                                            <div>
+                                                                {
+                                                                    id === "Ramoloss" || id === "Ortide" || id === "Têtarte" || id === "Kirlia" ?
+                                                                        <div className='pokemon__container__evolution__group'>
+                                                                            {
+                                                                                onePokemon.evolution.next.map((evolution) => (
+                                                                                    <Link to={'/' + evolution.name} className='pokemon__container__evolution__name pokemon__container__evolution__name--right'>
+                                                                                        {evolution.name}
+                                                                                    </Link>
+                                                                                ))
+                                                                            }
+                                                                        </div>
+                                                                        :
+                                                                        <div>
+                                                                            <Link to={'/' + onePokemon.evolution.next[0].name} className='pokemon__container__evolution__name pokemon__container__evolution__name--right'>
+                                                                                {onePokemon.evolution.next[0].name}
+                                                                            </Link>
+                                                                        </div>
+                                                                }
+                                                            </div>
+                                                    }
+                                                </div>
+                                                :
+                                                <div>
 
-                                            </div>
-                                    }
+                                                </div>
+                                        }
 
 
-                                </div>
+                                    </div>
 
-                                :
-                                <div></div>
-                        }
-
-
-                        <div className="pokemon__container__information">
-                            <strong>{onePokemon.category}</strong>
-                            <strong>taille : {onePokemon.height}</strong>
-                            <strong>poids : {onePokemon.weight}</strong>
-                            <div className='pokemon__container__information__container-img'>
-                                <strong className='pokemon__container__information__container-img__title'>types: </strong>
-                                <div>
-                                    {onePokemon.types.map((type) => (
-                                        <img src={type.image} alt={type.name} className='pokemon__container__information__container-img__img' />
-                                    ))}
-                                </div>
-
-                            </div>
-                            {onePokemon.sexe ?
-                                <strong>sexes :<br /> mâle {onePokemon.sexe.male}% / femelle {onePokemon.sexe.female}%</strong>
-                                :
-                                <div></div>
-
+                                    :
+                                    <div></div>
                             }
 
-                        </div>
 
-                        <div className='pokemon__container__img'>
-                            <img src={image === "regular" ? onePokemon.sprites.regular : onePokemon.sprites.shiny} alt={onePokemon.name.fr} />
-                            <button className='pokemon__container__img__button' onClick={imageHandler}>{image === "regular" ? "Shiny" : "Regular"}</button>
-                        </div>
-
-                        {
-                            onePokemon.evolution ?
-                                <div>
-                                    {onePokemon.evolution.mega ?
-                                        <div className='pokemon__container__mega-evolution'>
-                                            <h2>Méga évolution</h2>
-                                            <div className='pokemon__container__mega-evolution__flex'>
-                                                {onePokemon.evolution.mega.map((item) => (
-                                                    <div className='pokemon__container__mega-evolution__item'>
-                                                        <strong>{item.orbe}</strong>
-                                                        <img className='pokemon__container__mega-evolution__item--img' src={item.sprites.regular} alt={item.orbe} />
-                                                    </div>
-                                                ))}
-                                            </div>
-                                        </div>
-                                        :
-                                        <div>
-
-                                        </div>}
-
-                                </div>
-                                :
-                                <div>
-
-                                </div>
-                        }
-
-
-                        <div className='pokemon__container__tables'>
-
-                            <h2 className='pokemon__container__tables__title'>Statistiques</h2>
-                            <table className='pokemon__container__tables__stats'>
-                                <tr>
-                                    <th className='pokemon__container__tables__stats__cell'>HP</th>
-                                    <th className='pokemon__container__tables__stats__cell'>ATK</th>
-                                    <th className='pokemon__container__tables__stats__cell'>DEF</th>
-                                    <th className='pokemon__container__tables__stats__cell'>SPE_ATK</th>
-                                    <th className='pokemon__container__tables__stats__cell'>SPE_DEF</th>
-                                    <th className='pokemon__container__tables__stats__cell'>VIT</th>
-                                </tr>
-                                <tr>
-                                    <td className='pokemon__container__tables__stats__cell'>{onePokemon.stats.hp}</td>
-                                    <td className='pokemon__container__tables__stats__cell'>{onePokemon.stats.atk}</td>
-                                    <td className='pokemon__container__tables__stats__cell'>{onePokemon.stats.def}</td>
-                                    <td className='pokemon__container__tables__stats__cell'>{onePokemon.stats.spe_atk}</td>
-                                    <td className='pokemon__container__tables__stats__cell'>{onePokemon.stats.spe_def}</td>
-                                    <td className='pokemon__container__tables__stats__cell'>{onePokemon.stats.vit}</td>
-                                </tr>
-                            </table>
-
-                            <h2 className="pokemon__container__tables__title">Faiblesses</h2>
-                            <table className="pokemon__container__tables__weaknesses">
-
-                                <td className="pokemon__container__tables__weaknesses__column">
-                                    {onePokemon.resistances.slice(0, 9).map((resistance) => (
-                                        <tr>
-                                            <th className="pokemon__container__tables__weaknesses__cell">{resistance.name}</th>
-                                            {resistance.multiplier === 4 ?
-                                                <td className='pokemon__container__tables__weaknesses__cell--red'>{resistance.multiplier}</td>
-                                                :
-                                                resistance.multiplier === 2 ?
-                                                    <td className='pokemon__container__tables__weaknesses__cell--orange'>{resistance.multiplier}</td>
-                                                    :
-                                                    resistance.multiplier === 1 ?
-                                                        <td className='pokemon__container__tables__weaknesses__cell--yellow'>{resistance.multiplier}</td>
-                                                        :
-                                                        resistance.multiplier === 0.5 ?
-                                                            <td className='pokemon__container__tables__weaknesses__cell--green'>{resistance.multiplier}</td>
-                                                            :
-                                                            resistance.multiplier === 0.25 ?
-                                                                <td className='pokemon__container__tables__weaknesses__cell--blue'>{resistance.multiplier}</td>
-                                                                :
-                                                                resistance.multiplier === 0 ?
-                                                                    <td className='pokemon__container__tables__weaknesses__cell--white'>{resistance.multiplier}</td>
-                                                                    :
-                                                                    <td className='pokemon__container__tables__weaknesses__cell'>{resistance.multiplier}</td>
-                                            }
-                                        </tr>
-                                    ))}
-                                </td>
-
-                                <td className="pokemon__container__tables__weaknesses__column">
-                                    {onePokemon.resistances.slice(9, 18).map((resistance) => (
-                                        <tr>
-                                            <th className="pokemon__container__tables__weaknesses__cell">{resistance.name}</th>
-                                            {resistance.multiplier === 4 ?
-                                                <td className='pokemon__container__tables__weaknesses__cell--red'>{resistance.multiplier}</td>
-                                                :
-                                                resistance.multiplier === 2 ?
-                                                    <td className='pokemon__container__tables__weaknesses__cell--orange'>{resistance.multiplier}</td>
-                                                    :
-                                                    resistance.multiplier === 1 ?
-                                                        <td className='pokemon__container__tables__weaknesses__cell--yellow'>{resistance.multiplier}</td>
-                                                        :
-                                                        resistance.multiplier === 0.5 ?
-                                                            <td className='pokemon__container__tables__weaknesses__cell--green'>{resistance.multiplier}</td>
-                                                            :
-                                                            resistance.multiplier === 0.25 ?
-                                                                <td className='pokemon__container__tables__weaknesses__cell--blue'>{resistance.multiplier}</td>
-                                                                :
-                                                                resistance.multiplier === 0 ?
-                                                                    <td className='pokemon__container__tables__weaknesses__cell--white'>{resistance.multiplier}</td>
-                                                                    :
-                                                                    <td className='pokemon__container__tables__weaknesses__cell'>{resistance.multiplier}</td>
-                                            }
-                                        </tr>
-                                    ))}
-                                </td>
-
-                            </table>
-                        </div>
-
-                        <div className='pokemon__container__talents'>
-                            <h2>Talents</h2>
-                            <div className='pokemon__container__talents__container'>
-                                {onePokemon.talents.map(item => (
-                                    <div className='pokemon__container__talents__container__item'>
-                                        <strong>{item.name}</strong>
+                            <div className="pokemon__container__information">
+                                <strong>{onePokemon.category}</strong>
+                                <strong>taille : {onePokemon.height}</strong>
+                                <strong>poids : {onePokemon.weight}</strong>
+                                <div className='pokemon__container__information__container-img'>
+                                    <strong className='pokemon__container__information__container-img__title'>types: </strong>
+                                    <div>
+                                        {onePokemon.types.map((type) => (
+                                            <img src={type.image} alt={type.name} className='pokemon__container__information__container-img__img' />
+                                        ))}
                                     </div>
-                                ))
+
+                                </div>
+                                {onePokemon.sexe ?
+                                    <strong>sexes :<br /> mâle {onePokemon.sexe.male}% / femelle {onePokemon.sexe.female}%</strong>
+                                    :
+                                    <div></div>
+
                                 }
+
                             </div>
-                        </div>
+
+                            <div className='pokemon__container__img'>
+                                <img src={image === "regular" ? onePokemon.sprites.regular : onePokemon.sprites.shiny} alt={onePokemon.name.fr} />
+                                <button className='pokemon__container__img__button' onClick={imageHandler}>{image === "regular" ? "Shiny" : "Regular"}</button>
+                            </div>
+
+                            {
+                                onePokemon.evolution ?
+                                    <div>
+                                        {onePokemon.evolution.mega ?
+                                            <div className='pokemon__container__mega-evolution'>
+                                                <h2>Méga évolution</h2>
+                                                <div className='pokemon__container__mega-evolution__flex'>
+                                                    {onePokemon.evolution.mega.map((item) => (
+                                                        <div className='pokemon__container__mega-evolution__item'>
+                                                            <strong>{item.orbe}</strong>
+                                                            <img className='pokemon__container__mega-evolution__item--img' src={item.sprites.regular} alt={item.orbe} />
+                                                        </div>
+                                                    ))}
+                                                </div>
+                                            </div>
+                                            :
+                                            <div>
+
+                                            </div>}
+
+                                    </div>
+                                    :
+                                    <div>
+
+                                    </div>
+                            }
+
+                            <div className="pokemon__container__stats">
+
+                                <h2 className='pokemon__container__stats__title'>Statistiques</h2>
+
+
+                                <div className="pokemon__container__stats__item">
+                                    <h3 className="pokemon__container__stats__item__name">HP</h3>
+                                    <div className="pokemon__container__stats__item__value">
+                                        <span className="pokemon__container__stats__item__value__number">{onePokemon.stats.hp}</span>
+                                        <div className='pokemon__container__stats__item__empty-bar'>
+                                            <div className='pokemon__container__stats__item__full-bar' style={{ width: `${onePokemon.stats.hp}%` }}></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div className="pokemon__container__stats__item">
+                                    <h3 className="pokemon__container__stats__item__name">ATK</h3>
+                                    <div className="pokemon__container__stats__item__value">
+                                        <span className="pokemon__container__stats__item__value__number">{onePokemon.stats.atk}</span>
+                                        <div className='pokemon__container__stats__item__empty-bar'>
+                                            <div className='pokemon__container__stats__item__full-bar' style={{ width: `${onePokemon.stats.atk}%` }}></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div className="pokemon__container__stats__item">
+                                    <h3 className="pokemon__container__stats__item__name">DEF</h3>
+                                    <div className="pokemon__container__stats__item__value">
+                                        <span className="pokemon__container__stats__item__value__number">{onePokemon.stats.def}</span>
+                                        <div className='pokemon__container__stats__item__empty-bar'>
+                                            <div className='pokemon__container__stats__item__full-bar' style={{ width: `${onePokemon.stats.def}%` }}></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div className="pokemon__container__stats__item">
+                                    <h3 className="pokemon__container__stats__item__name">ATK SPE</h3>
+                                    <div className="pokemon__container__stats__item__value">
+                                        <span className="pokemon__container__stats__item__value__number">{onePokemon.stats.spe_atk}</span>
+                                        <div className='pokemon__container__stats__item__empty-bar'>
+                                            <div className='pokemon__container__stats__item__full-bar' style={{ width: `${onePokemon.stats.spe_atk}%` }}></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div className="pokemon__container__stats__item">
+                                    <h3 className="pokemon__container__stats__item__name">DEF SPE</h3>
+                                    <div className="pokemon__container__stats__item__value">
+                                        <span className="pokemon__container__stats__item__value__number">{onePokemon.stats.spe_def}</span>
+                                        <div className='pokemon__container__stats__item__empty-bar'>
+                                            <div className='pokemon__container__stats__item__full-bar' style={{ width: `${onePokemon.stats.spe_def}%` }}></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div className="pokemon__container__stats__item">
+                                    <h3 className="pokemon__container__stats__item__name">VIT</h3>
+                                    <div className="pokemon__container__stats__item__value">
+                                        <span className="pokemon__container__stats__item__value__number">{onePokemon.stats.vit}</span>
+                                        <div className='pokemon__container__stats__item__empty-bar'>
+                                            <div className='pokemon__container__stats__item__full-bar' style={{ width: `${onePokemon.stats.vit}%` }}></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div className='pokemon__container__tables'>
+
+                                <h2 className="pokemon__container__tables__title">Faiblesses</h2>
+                                <table className="pokemon__container__tables__weaknesses">
+
+                                    <td className="pokemon__container__tables__weaknesses__column">
+                                        {onePokemon.resistances.slice(0, 9).map((resistance) => (
+                                            <tr>
+                                                <th className="pokemon__container__tables__weaknesses__cell">{resistance.name}</th>
+                                                {resistance.multiplier === 4 ?
+                                                    <td className='pokemon__container__tables__weaknesses__cell--red'>{resistance.multiplier}</td>
+                                                    :
+                                                    resistance.multiplier === 2 ?
+                                                        <td className='pokemon__container__tables__weaknesses__cell--orange'>{resistance.multiplier}</td>
+                                                        :
+                                                        resistance.multiplier === 1 ?
+                                                            <td className='pokemon__container__tables__weaknesses__cell--yellow'>{resistance.multiplier}</td>
+                                                            :
+                                                            resistance.multiplier === 0.5 ?
+                                                                <td className='pokemon__container__tables__weaknesses__cell--green'>{resistance.multiplier}</td>
+                                                                :
+                                                                resistance.multiplier === 0.25 ?
+                                                                    <td className='pokemon__container__tables__weaknesses__cell--blue'>{resistance.multiplier}</td>
+                                                                    :
+                                                                    resistance.multiplier === 0 ?
+                                                                        <td className='pokemon__container__tables__weaknesses__cell--white'>{resistance.multiplier}</td>
+                                                                        :
+                                                                        <td className='pokemon__container__tables__weaknesses__cell'>{resistance.multiplier}</td>
+                                                }
+                                            </tr>
+                                        ))}
+                                    </td>
+
+                                    <td className="pokemon__container__tables__weaknesses__column">
+                                        {onePokemon.resistances.slice(9, 18).map((resistance) => (
+                                            <tr>
+                                                <th className="pokemon__container__tables__weaknesses__cell">{resistance.name}</th>
+                                                {resistance.multiplier === 4 ?
+                                                    <td className='pokemon__container__tables__weaknesses__cell--red'>{resistance.multiplier}</td>
+                                                    :
+                                                    resistance.multiplier === 2 ?
+                                                        <td className='pokemon__container__tables__weaknesses__cell--orange'>{resistance.multiplier}</td>
+                                                        :
+                                                        resistance.multiplier === 1 ?
+                                                            <td className='pokemon__container__tables__weaknesses__cell--yellow'>{resistance.multiplier}</td>
+                                                            :
+                                                            resistance.multiplier === 0.5 ?
+                                                                <td className='pokemon__container__tables__weaknesses__cell--green'>{resistance.multiplier}</td>
+                                                                :
+                                                                resistance.multiplier === 0.25 ?
+                                                                    <td className='pokemon__container__tables__weaknesses__cell--blue'>{resistance.multiplier}</td>
+                                                                    :
+                                                                    resistance.multiplier === 0 ?
+                                                                        <td className='pokemon__container__tables__weaknesses__cell--white'>{resistance.multiplier}</td>
+                                                                        :
+                                                                        <td className='pokemon__container__tables__weaknesses__cell'>{resistance.multiplier}</td>
+                                                }
+                                            </tr>
+                                        ))}
+                                    </td>
+
+                                </table>
+                            </div>
+
+                            <div className='pokemon__container__talents'>
+                                <h2>Talents</h2>
+                                <div className='pokemon__container__talents__container'>
+                                    {onePokemon.talents.map(item => (
+                                        <div className='pokemon__container__talents__container__item'>
+                                            <strong>{item.name}</strong>
+                                        </div>
+                                    ))
+                                    }
+                                </div>
+                            </div>
                         </div>
 
 
