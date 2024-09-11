@@ -41,6 +41,14 @@ function Pokemon() {
     // On crée une variable pour retenir le nom du pokémon
     let pokemonName = ""
 
+    // On crée des variable pour gérer la couleur de la barre de stat en fonction de la valeur
+    let statbarHP = ""
+    let statbarAtk = ""
+    let statbarDef = ""
+    let statbarSpeAtk = ""
+    let statbarSpeDef = ""
+    let statbarVit = ""
+
 
 
     // Si un pokémon a été trouvé
@@ -139,6 +147,78 @@ function Pokemon() {
                 break;
         }
 
+        if(onePokemon.stats.hp < 60) {
+            statbarHP = 'pokemon__container__stats__item__full-bar--red'
+        } else if( onePokemon.stats.hp >= 60 && onePokemon.stats.hp < 80){
+            statbarHP = 'pokemon__container__stats__item__full-bar--orange'
+        } else if(onePokemon.stats.hp >= 80 && onePokemon.stats.hp < 100){
+            statbarHP = 'pokemon__container__stats__item__full-bar--yellow'
+        } else if(onePokemon.stats.hp >= 100){
+            statbarHP = 'pokemon__container__stats__item__full-bar--green'
+        } else {
+            statbarHP = 'pokemon__container__stats__item__full-bar'
+        }
+
+        if(onePokemon.stats.atk < 60) {
+            statbarAtk = 'pokemon__container__stats__item__full-bar--red'
+        } else if (onePokemon.stats.atk  >= 60 && onePokemon.stats.atk < 80){
+            statbarAtk = 'pokemon__container__stats__item__full-bar--orange'
+        } else if(onePokemon.stats.atk  >= 80 && onePokemon.stats.atk < 100){
+            statbarAtk = 'pokemon__container__stats__item__full-bar--yellow'
+        } else if(onePokemon.stats.atk >= 100){
+            statbarAtk = 'pokemon__container__stats__item__full-bar--green'
+        } else {
+            statbarAtk = 'pokemon__container__stats__item__full-bar'
+        }
+
+        if(onePokemon.stats.def < 60) {
+            statbarDef = 'pokemon__container__stats__item__full-bar--red'
+        } else if( onePokemon.stats.def >= 60 && onePokemon.stats.def < 80){
+            statbarDef = 'pokemon__container__stats__item__full-bar--orange'
+        } else if(onePokemon.stats.def >= 80 && onePokemon.stats.def < 100){
+            statbarDef = 'pokemon__container__stats__item__full-bar--yellow'
+        } else if(onePokemon.stats.def >= 100){
+            statbarDef = 'pokemon__container__stats__item__full-bar--green'
+        } else {
+            statbarDef = 'pokemon__container__stats__item__full-bar'
+        }
+
+        if(onePokemon.stats.spe_atk < 60) {
+            statbarSpeAtk = 'pokemon__container__stats__item__full-bar--red'
+        } else if(onePokemon.stats.spe_atk >= 60 && onePokemon.stats.spe_atk < 80){
+            statbarSpeAtk = 'pokemon__container__stats__item__full-bar--orange'
+        } else if(onePokemon.stats.spe_atk >= 80 && onePokemon.stats.spe_atk < 100){
+            statbarSpeAtk = 'pokemon__container__stats__item__full-bar--yellow'
+        } else if(onePokemon.stats.spe_atk >= 100){
+            statbarSpeAtk = 'pokemon__container__stats__item__full-bar--green'
+        } else {
+            statbarSpeAtk = 'pokemon__container__stats__item__full-bar'
+        }
+
+        if(onePokemon.stats.spe_def < 60) {
+            statbarSpeDef = 'pokemon__container__stats__item__full-bar--red'
+        } else if(onePokemon.stats.spe_def >= 60 && onePokemon.stats.spe_def < 80){
+            statbarSpeDef = 'pokemon__container__stats__item__full-bar--orange'
+        } else if(onePokemon.stats.spe_def >= 80 && onePokemon.stats.spe_def < 100){
+            statbarSpeDef = 'pokemon__container__stats__item__full-bar--yellow'
+        } else if(onePokemon.stats.spe_def >= 100){
+            statbarSpeDef = 'pokemon__container__stats__item__full-bar--green'
+        } else {
+            statbarSpeDef = 'pokemon__container__stats__item__full-bar'
+        }
+
+        if(onePokemon.stats.vit < 60) {
+            statbarVit = 'pokemon__container__stats__item__full-bar--red'
+        } else if(onePokemon.stats.vit >= 60 && onePokemon.stats.vit < 80){
+            statbarVit = 'pokemon__container__stats__item__full-bar--orange'
+        } else if(onePokemon.stats.vit >= 80 && onePokemon.stats.vit < 100){
+            statbarVit = 'pokemon__container__stats__item__full-bar--yellow'            
+        } else if(onePokemon.stats.vit >= 100){
+            statbarVit = 'pokemon__container__stats__item__full-bar--green'
+        } else {
+            statbarVit = 'pokemon__container__stats__item__full-bar'
+        }
+
 
     }
 
@@ -160,6 +240,7 @@ function Pokemon() {
 
 
     }
+
 
     const statDisplayed = document.querySelector('pokemon__container__stats__item__full-bar')
     console.log(statDisplayed);
@@ -321,7 +402,7 @@ function Pokemon() {
                                     <div className="pokemon__container__stats__item__value">
                                         <span className="pokemon__container__stats__item__value__number">{onePokemon.stats.hp}</span>
                                         <div className='pokemon__container__stats__item__empty-bar'>
-                                            <div className='pokemon__container__stats__item__full-bar' style={{ width: `${onePokemon.stats.hp}%` }}></div>
+                                            <div className={statbarHP}  style={{ width: `${onePokemon.stats.hp}%` }}></div>
                                         </div>
                                     </div>
                                 </div>
@@ -331,7 +412,7 @@ function Pokemon() {
                                     <div className="pokemon__container__stats__item__value">
                                         <span className="pokemon__container__stats__item__value__number">{onePokemon.stats.atk}</span>
                                         <div className='pokemon__container__stats__item__empty-bar'>
-                                            <div className='pokemon__container__stats__item__full-bar' style={{ width: `${onePokemon.stats.atk}%` }}></div>
+                                            <div className={statbarAtk} style={{ width: `${onePokemon.stats.atk}%` }}></div>
                                         </div>
                                     </div>
                                 </div>
@@ -341,7 +422,7 @@ function Pokemon() {
                                     <div className="pokemon__container__stats__item__value">
                                         <span className="pokemon__container__stats__item__value__number">{onePokemon.stats.def}</span>
                                         <div className='pokemon__container__stats__item__empty-bar'>
-                                            <div className='pokemon__container__stats__item__full-bar' style={{ width: `${onePokemon.stats.def}%` }}></div>
+                                            <div className={statbarDef} style={{ width: `${onePokemon.stats.def}%` }}></div>
                                         </div>
                                     </div>
                                 </div>
@@ -351,7 +432,7 @@ function Pokemon() {
                                     <div className="pokemon__container__stats__item__value">
                                         <span className="pokemon__container__stats__item__value__number">{onePokemon.stats.spe_atk}</span>
                                         <div className='pokemon__container__stats__item__empty-bar'>
-                                            <div className='pokemon__container__stats__item__full-bar' style={{ width: `${onePokemon.stats.spe_atk}%` }}></div>
+                                            <div className={statbarSpeAtk} style={{ width: `${onePokemon.stats.spe_atk}%` }}></div>
                                         </div>
                                     </div>
                                 </div>
@@ -361,7 +442,7 @@ function Pokemon() {
                                     <div className="pokemon__container__stats__item__value">
                                         <span className="pokemon__container__stats__item__value__number">{onePokemon.stats.spe_def}</span>
                                         <div className='pokemon__container__stats__item__empty-bar'>
-                                            <div className='pokemon__container__stats__item__full-bar' style={{ width: `${onePokemon.stats.spe_def}%` }}></div>
+                                            <div className={statbarSpeDef} style={{ width: `${onePokemon.stats.spe_def}%` }}></div>
                                         </div>
                                     </div>
                                 </div>
@@ -371,7 +452,7 @@ function Pokemon() {
                                     <div className="pokemon__container__stats__item__value">
                                         <span className="pokemon__container__stats__item__value__number">{onePokemon.stats.vit}</span>
                                         <div className='pokemon__container__stats__item__empty-bar'>
-                                            <div className='pokemon__container__stats__item__full-bar' style={{ width: `${onePokemon.stats.vit}%` }}></div>
+                                            <div className={statbarVit} style={{ width: `${onePokemon.stats.vit}%` }}></div>
                                         </div>
                                     </div>
                                 </div>

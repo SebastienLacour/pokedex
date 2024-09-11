@@ -158,8 +158,26 @@
                 }
 
                 &__full-bar{
-                    background-color: $page-color;
+                    background-color: white;
                     height: 100%;
+
+                    &--red{
+                        background-color: $background-great-weakness;
+                        height: 100%;
+                    }
+                    &--orange{
+                        background-color: $background-weakness;
+                        height: 100%;
+                    }
+                    &--yellow{
+                        background-color: $background-neutral;
+                        height: 100%;
+                    }
+                    &--green{
+                        background-color: $background-resistance;
+                        height: 100%;
+
+                    }
                 }
             }
         }
