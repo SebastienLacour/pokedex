@@ -49,6 +49,8 @@ function Pokemon() {
     let statbarSpeDef = ""
     let statbarVit = ""
 
+    console.log(onePokemon);
+    
 
 
     // Si un pokémon a été trouvé
@@ -237,14 +239,7 @@ function Pokemon() {
                 setImage("regular")
             )
         }
-
-
     }
-
-
-    const statDisplayed = document.querySelector('pokemon__container__stats__item__full-bar')
-    console.log(statDisplayed);
-
 
     return (
         <div>
@@ -339,11 +334,12 @@ function Pokemon() {
 
 
                             <div className="pokemon__container__information">
+                                <strong>Génération {onePokemon.generation}</strong>
                                 <strong>{onePokemon.category}</strong>
-                                <strong>taille : {onePokemon.height}</strong>
-                                <strong>poids : {onePokemon.weight}</strong>
+                                <strong>Taille : {onePokemon.height}</strong>
+                                <strong>Poids : {onePokemon.weight}</strong>
                                 <div className='pokemon__container__information__container-img'>
-                                    <strong className='pokemon__container__information__container-img__title'>types: </strong>
+                                    <strong className='pokemon__container__information__container-img__title'>Types: </strong>
                                     <div>
                                         {onePokemon.types.map((type) => (
                                             <img src={type.image} alt={type.name} className='pokemon__container__information__container-img__img' />
@@ -352,10 +348,9 @@ function Pokemon() {
 
                                 </div>
                                 {onePokemon.sexe ?
-                                    <strong>sexes :<br /> mâle {onePokemon.sexe.male}% / femelle {onePokemon.sexe.female}%</strong>
+                                    <strong>Sexes :<br /> mâle {onePokemon.sexe.male}% / femelle {onePokemon.sexe.female}%</strong>
                                     :
-                                    <div></div>
-
+                                    <strong>Sexes : Asexué</strong>
                                 }
 
                             </div>

@@ -108,6 +108,162 @@ function Compared() {
         },
     ]
 
+    let statbarHPFirst = ""
+    let statbarAtkFirst = ""
+    let statbarDefFirst = ""
+    let statbarSpeAtkFirst = ""
+    let statbarSpeDefFirst = ""
+    let statbarVitFirst = ""
+    let statbarHPSecond = ""
+    let statbarAtkSecond = ""
+    let statbarDefSecond = ""
+    let statbarSpeAtkSecond = ""
+    let statbarSpeDefSecond = ""
+    let statbarVitSecond = ""
+
+    if (comparedPokemon[0].stats.hp < 60) {
+        statbarHPFirst = 'compared__pokemon__item__stats__item__full-bar--red'
+    } else if (comparedPokemon[0].stats.hp >= 60 && comparedPokemon[0].stats.hp < 80) {
+        statbarHPFirst = 'compared__pokemon__item__stats__item__full-bar--orange'
+    } else if (comparedPokemon[0].stats.hp >= 80 && comparedPokemon[0].stats.hp < 100) {
+        statbarHPFirst = 'compared__pokemon__item__stats__item__full-bar--yellow'
+    } else if (comparedPokemon[0].stats.hp >= 100) {
+        statbarHPFirst = 'compared__pokemon__item__stats__item__full-bar--green'
+    } else {
+        statbarHPFirst = 'pokemon__container__stats__item__full-bar'
+    }
+
+    if (comparedPokemon[0].stats.atk < 60) {
+        statbarAtkFirst = 'compared__pokemon__item__stats__item__full-bar--red'
+    } else if (comparedPokemon[0].stats.atk >= 60 && comparedPokemon[0].stats.atk < 80) {
+        statbarAtkFirst = 'compared__pokemon__item__stats__item__full-bar--orange'
+    } else if (comparedPokemon[0].stats.atk >= 80 && comparedPokemon[0].stats.atk < 100) {
+        statbarAtkFirst = 'compared__pokemon__item__stats__item__full-bar--yellow'
+    } else if (comparedPokemon[0].stats.atk >= 100) {
+        statbarAtkFirst = 'compared__pokemon__item__stats__item__full-bar--green'
+    } else {
+        statbarAtkFirst = 'pokemon__container__stats__item__full-bar'
+    }
+
+    if (comparedPokemon[0].stats.def < 60) {
+        statbarDefFirst = 'compared__pokemon__item__stats__item__full-bar--red'
+    } else if (comparedPokemon[0].stats.def >= 60 && comparedPokemon[0].stats.def < 80) {
+        statbarDefFirst = 'compared__pokemon__item__stats__item__full-bar--orange'
+    } else if (comparedPokemon[0].stats.def >= 80 && comparedPokemon[0].stats.def < 100) {
+        statbarDefFirst = 'compared__pokemon__item__stats__item__full-bar--yellow'
+    } else if (comparedPokemon[0].stats.def >= 100) {
+        statbarDefFirst = 'compared__pokemon__item__stats__item__full-bar--green'
+    } else {
+        statbarDefFirst = 'pokemon__container__stats__item__full-bar'
+    }
+
+    if (comparedPokemon[0].stats.spe_atk < 60) {
+        statbarSpeAtkFirst = 'compared__pokemon__item__stats__item__full-bar--red'
+    } else if (comparedPokemon[0].stats.spe_atk >= 60 && comparedPokemon[0].stats.spe_atk < 80) {
+        statbarSpeAtkFirst = 'compared__pokemon__item__stats__item__full-bar--orange'
+    } else if (comparedPokemon[0].stats.spe_atk >= 80 && comparedPokemon[0].stats.spe_atk < 100) {
+        statbarSpeAtkFirst = 'compared__pokemon__item__stats__item__full-bar--yellow'
+    } else if (comparedPokemon[0].stats.spe_atk >= 100) {
+        statbarSpeAtkFirst = 'compared__pokemon__item__stats__item__full-bar--green'
+    } else {
+        statbarSpeAtkFirst = 'pokemon__container__stats__item__full-bar'
+    }
+
+    if (comparedPokemon[0].stats.spe_def < 60) {
+        statbarSpeDefFirst = 'compared__pokemon__item__stats__item__full-bar--red'
+    } else if (comparedPokemon[0].stats.spe_def >= 60 && comparedPokemon[0].stats.spe_def < 80) {
+        statbarSpeDefFirst = 'compared__pokemon__item__stats__item__full-bar--orange'
+    } else if (comparedPokemon[0].stats.spe_def >= 80 && comparedPokemon[0].stats.spe_def < 100) {
+        statbarSpeDefFirst = 'compared__pokemon__item__stats__item__full-bar--yellow'
+    } else if (comparedPokemon[0].stats.spe_def >= 100) {
+        statbarSpeDefFirst = 'compared__pokemon__item__stats__item__full-bar--green'
+    } else {
+        statbarSpeDefFirst = 'pokemon__container__stats__item__full-bar'
+    }
+
+    if (comparedPokemon[0].stats.vit < 60) {
+        statbarVitFirst = 'compared__pokemon__item__stats__item__full-bar--red'
+    } else if (comparedPokemon[0].stats.vit >= 60 && comparedPokemon[0].stats.vit < 80) {
+        statbarVitFirst = 'compared__pokemon__item__stats__item__full-bar--orange'
+    } else if (comparedPokemon[0].stats.vit >= 80 && comparedPokemon[0].stats.vit < 100) {
+        statbarVitFirst = 'compared__pokemon__item__stats__item__full-bar--yellow'
+    } else if (comparedPokemon[0].stats.vit >= 100) {
+        statbarVitFirst = 'compared__pokemon__item__stats__item__full-bar--green'
+    } else {
+        statbarVitFirst = 'pokemon__container__stats__item__full-bar'
+    }
+
+    if (comparedPokemon[1].stats.hp < 60) {
+        statbarHPSecond = 'compared__pokemon__item__stats__item__full-bar--red'
+    } else if (comparedPokemon[1].stats.hp >= 60 && comparedPokemon[1].stats.hp < 80) {
+        statbarHPSecond = 'compared__pokemon__item__stats__item__full-bar--orange'
+    } else if (comparedPokemon[1].stats.hp >= 80 && comparedPokemon[1].stats.hp < 100) {
+        statbarHPSecond = 'compared__pokemon__item__stats__item__full-bar--yellow'
+    } else if (comparedPokemon[1].stats.hp >= 100) {
+        statbarHPSecond = 'compared__pokemon__item__stats__item__full-bar--green'
+    } else {
+        statbarHPSecond = 'pokemon__container__stats__item__full-bar'
+    }
+
+    if (comparedPokemon[1].stats.atk < 60) {
+        statbarAtkSecond = 'compared__pokemon__item__stats__item__full-bar--red'
+    } else if (comparedPokemon[1].stats.atk >= 60 && comparedPokemon[1].stats.atk < 80) {
+        statbarAtkSecond = 'compared__pokemon__item__stats__item__full-bar--orange'
+    } else if (comparedPokemon[1].stats.atk >= 80 && comparedPokemon[1].stats.atk < 100) {
+        statbarAtkSecond = 'compared__pokemon__item__stats__item__full-bar--yellow'
+    } else if (comparedPokemon[1].stats.atk >= 100) {
+        statbarAtkSecond = 'compared__pokemon__item__stats__item__full-bar--green'
+    } else {
+        statbarAtkSecond = 'pokemon__container__stats__item__full-bar'
+    }
+
+    if (comparedPokemon[1].stats.def < 60) {
+        statbarDefSecond = 'compared__pokemon__item__stats__item__full-bar--red'
+    } else if (comparedPokemon[1].stats.def >= 60 && comparedPokemon[1].stats.def < 80) {
+        statbarDefSecond = 'compared__pokemon__item__stats__item__full-bar--orange'
+    } else if (comparedPokemon[1].stats.def >= 80 && comparedPokemon[1].stats.def < 100) {
+        statbarDefSecond = 'compared__pokemon__item__stats__item__full-bar--yellow'
+    } else if (comparedPokemon[1].stats.def >= 100) {
+        statbarDefSecond = 'compared__pokemon__item__stats__item__full-bar--green'
+    } else {
+        statbarDefSecond = 'pokemon__container__stats__item__full-bar'
+    }
+
+    if (comparedPokemon[1].stats.spe_atk < 60) {
+        statbarSpeAtkSecond = 'compared__pokemon__item__stats__item__full-bar--red'
+    } else if (comparedPokemon[1].stats.spe_atk >= 60 && comparedPokemon[1].stats.spe_atk < 80) {
+        statbarSpeAtkSecond = 'compared__pokemon__item__stats__item__full-bar--orange'
+    } else if (comparedPokemon[1].stats.spe_atk >= 80 && comparedPokemon[1].stats.spe_atk < 100) {
+        statbarSpeAtkSecond = 'compared__pokemon__item__stats__item__full-bar--yellow'
+    } else if (comparedPokemon[1].stats.spe_atk >= 100) {
+        statbarSpeAtkSecond = 'compared__pokemon__item__stats__item__full-bar--green'
+    } else {
+        statbarSpeAtkSecond = 'pokemon__container__stats__item__full-bar'
+    }
+
+    if (comparedPokemon[1].stats.spe_def < 60) {
+        statbarSpeDefSecond = 'compared__pokemon__item__stats__item__full-bar--red'
+    } else if (comparedPokemon[1].stats.spe_def >= 60 && comparedPokemon[1].stats.spe_def < 80) {
+        statbarSpeDefSecond = 'compared__pokemon__item__stats__item__full-bar--orange'
+    } else if (comparedPokemon[1].stats.spe_def >= 80 && comparedPokemon[1].stats.spe_def < 100) {
+        statbarSpeDefSecond = 'compared__pokemon__item__stats__item__full-bar--yellow'
+    } else if (comparedPokemon[1].stats.spe_def >= 100) {
+        statbarSpeDefSecond = 'compared__pokemon__item__stats__item__full-bar--green'
+    } else {
+        statbarSpeDefSecond = 'pokemon__container__stats__item__full-bar'
+    }
+
+    if (comparedPokemon[1].stats.vit < 60) {
+        statbarVitSecond = 'compared__pokemon__item__stats__item__full-bar--red'
+    } else if (comparedPokemon[1].stats.vit >= 60 && comparedPokemon[1].stats.vit < 80) {
+        statbarVitSecond = 'compared__pokemon__item__stats__item__full-bar--orange'
+    } else if (comparedPokemon[1].stats.vit >= 80 && comparedPokemon[1].stats.vit < 100) {
+        statbarVitSecond = 'compared__pokemon__item__stats__item__full-bar--yellow'
+    } else if (comparedPokemon[1].stats.vit >= 100) {
+        statbarVitSecond = 'compared__pokemon__item__stats__item__full-bar--green'
+    } else {
+        statbarVitSecond = 'pokemon__container__stats__item__full-bar'
+    }
 
     return (
         <div>
@@ -199,32 +355,55 @@ function Compared() {
                                 </div>
                             </div>
                         </div>
-
+                        
+                        <h3>Stats</h3>
                         <div className='compared__pokemon__item__stats'>
-                            <h3>Stats</h3>
                             <div className="compared__pokemon__item__stats__item">
                                 <h4>Vie</h4>
                                 <strong>{comparedPokemon[0].stats.hp}</strong>
+                                <div className='compared__pokemon__item__stats__item__empty-bar'>
+                                    <div className={statbarHPFirst} style={{ width: `${comparedPokemon[0].stats.hp}%` }}></div>
+                                </div>
                             </div>
                             <div className="compared__pokemon__item__stats__item">
                                 <h4>Attaque</h4>
                                 <strong>{comparedPokemon[0].stats.atk}</strong>
+                                <div className='compared__pokemon__item__stats__item__empty-bar'>
+                                    <div className={statbarAtkFirst} style={{ width: `${comparedPokemon[0].stats.atk}%` }}></div>
+                                </div>
+
                             </div>
                             <div className="compared__pokemon__item__stats__item">
                                 <h4>Défense</h4>
                                 <strong>{comparedPokemon[0].stats.def}</strong>
+                                <div className='compared__pokemon__item__stats__item__empty-bar'>
+                                    <div className={statbarDefFirst} style={{ width: `${comparedPokemon[0].stats.def}%` }}></div>
+                                </div>
+
                             </div>
                             <div className="compared__pokemon__item__stats__item">
                                 <h4>Attaque spéciale</h4>
                                 <strong>{comparedPokemon[0].stats.spe_atk}</strong>
+                                <div className='compared__pokemon__item__stats__item__empty-bar'>
+                                    <div className={statbarSpeAtkFirst} style={{ width: `${comparedPokemon[0].stats.spe_atk}%` }}></div>
+                                </div>
+
                             </div>
                             <div className="compared__pokemon__item__stats__item">
                                 <h4>Défense spéciale</h4>
                                 <strong>{comparedPokemon[0].stats.spe_def}</strong>
+                                <div className='compared__pokemon__item__stats__item__empty-bar'>
+                                    <div className={statbarSpeDefFirst} style={{ width: `${comparedPokemon[0].stats.spe_def}%` }}></div>
+                                </div>
+
                             </div>
                             <div className="compared__pokemon__item__stats__item">
                                 <h4>Vitesse</h4>
                                 <strong>{comparedPokemon[0].stats.vit}</strong>
+                                <div className='compared__pokemon__item__stats__item__empty-bar'>
+                                    <div className={statbarVitFirst} style={{ width: `${comparedPokemon[0].stats.vit}%` }}></div>
+                                </div>
+
                             </div>
                         </div>
                     </div>
@@ -309,31 +488,54 @@ function Compared() {
                             </div>
                         </div>
 
-                        <div className='compared__pokemon__item__stats'>
-                            <h3>Stats</h3>
-                            <div className="compared__pokemon__item__stats__item--reversed">
-                                <h4>Vie</h4>
+                        <h3>Stats</h3>
+                        <div className=' compared__pokemon__item__stats--reversed'>
+                            <div className=" compared__pokemon__item__stats__item--reversed">
+                                <div className='compared__pokemon__item__stats__item__empty-bar--reversed'>
+                                    <div className={statbarHPSecond} style={{ width: `${comparedPokemon[1].stats.hp}%` }}></div>
+                                </div>
                                 <strong>{comparedPokemon[1].stats.hp}</strong>
+                                <h4>Vie</h4>
                             </div>
+
                             <div className="compared__pokemon__item__stats__item--reversed">
-                                <h4>Attaque</h4>
+                                <div className='compared__pokemon__item__stats__item__empty-bar--reversed'>
+                                    <div className={statbarAtkSecond} style={{ width: `${comparedPokemon[1].stats.atk}%` }}></div>
+                                </div>
                                 <strong>{comparedPokemon[1].stats.atk}</strong>
+                                <h4>Attaque</h4>
                             </div>
+
                             <div className="compared__pokemon__item__stats__item--reversed">
-                                <h4>Défense</h4>
+                                <div className='compared__pokemon__item__stats__item__empty-bar--reversed'>
+                                    <div className={statbarDefSecond} style={{ width: `${comparedPokemon[1].stats.def}%` }}></div>
+                                </div>
                                 <strong>{comparedPokemon[1].stats.def}</strong>
+                                <h4>Défense</h4>
                             </div>
+
                             <div className="compared__pokemon__item__stats__item--reversed">
-                                <h4>Attaque spéciale</h4>
+                                <div className='compared__pokemon__item__stats__item__empty-bar--reversed'>
+                                    <div className={statbarSpeAtkSecond} style={{ width: `${comparedPokemon[1].stats.spe_atk}%` }}></div>
+                                </div>
                                 <strong>{comparedPokemon[1].stats.spe_atk}</strong>
+                                <h4>Attaque spéciale</h4>
                             </div>
+
                             <div className="compared__pokemon__item__stats__item--reversed">
-                                <h4>Défense spéciale</h4>
+                                <div className='compared__pokemon__item__stats__item__empty-bar--reversed'>
+                                    <div className={statbarSpeDefSecond} style={{ width: `${comparedPokemon[1].stats.spe_def}%` }}></div>
+                                </div>
                                 <strong>{comparedPokemon[1].stats.spe_def}</strong>
+                                <h4>Défense spéciale</h4>
                             </div>
+
                             <div className="compared__pokemon__item__stats__item--reversed">
-                                <h4>Vitesse</h4>
+                                <div className='compared__pokemon__item__stats__item__empty-bar--reversed'>
+                                    <div className={statbarVitSecond} style={{ width: `${comparedPokemon[1].stats.vit}%` }}></div>
+                                </div>
                                 <strong>{comparedPokemon[1].stats.vit}</strong>
+                                <h4>Vitesse</h4>
                             </div>
                         </div>
                     </div>
