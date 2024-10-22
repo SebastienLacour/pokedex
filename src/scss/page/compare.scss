@@ -1,6 +1,6 @@
 .compare {
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -18,7 +18,42 @@
         display: flex;
         justify-content: space-around;
         width: 90%;
-        height: 20px;
+
+        &__container{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            &__pokemon{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                &__image{
+                    width: 50%;
+                    min-height: auto;
+                }
+            }
+        }
+    }
+
+    &__pokemons{
+        display: flex;
+        justify-content: space-around;
+        width: 90%;
+
+        &__item{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+
+            &__image{
+                width: 60%;
+                min-height: auto;
+            }
+
+        }
     }
 
     &__buttons {

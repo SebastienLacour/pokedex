@@ -409,7 +409,11 @@ function Compared() {
                     </div>
 
                     <div className='compared__pokemon__item compared__pokemon__item--right'>
-                        <h2>{comparedPokemon[1].name.fr}</h2>
+                    {language === "anglais" ?
+                            <h2>{comparedPokemon[1].name.en}</h2>
+                            :
+                            <h2>{comparedPokemon[1].name.fr}</h2>
+                        }
                         <img src={comparedPokemon[1].sprites.regular} alt={comparedPokemon[1].name.fr} />
                         <div className='compared__pokemon__item__types'>
                             <h3>types</h3>
