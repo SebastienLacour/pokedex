@@ -529,6 +529,17 @@ function Pokemon() {
                                     }
                                 </div>
                             </div>
+
+                            <div className="pokemon__container__eggs">
+                                <h2>Groupes d'oeufs</h2>
+                                <div className="pokemon__container__eggs__container">
+                                    {onePokemon.egg_groups.map(item => (
+                                        <div className="pokemon__container__eggs__container__item">
+                                            <strong>{item}</strong>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
                         </div>
 
 
